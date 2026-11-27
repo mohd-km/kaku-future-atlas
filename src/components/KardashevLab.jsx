@@ -92,7 +92,7 @@ export default function KardashevLab() {
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>Kaku Future Atlas — 1-Page Energy Summary</title>
+<title>Frontier Future Atlas — 1-Page Energy Summary</title>
 <style>
   body { font-family: Georgia, serif; color: #111; background: #fff; max-width: 760px; margin: 36px auto; padding: 0 20px; line-height: 1.5; }
   h1 { font-size: 28px; margin: 0 0 6px; }
@@ -109,8 +109,8 @@ export default function KardashevLab() {
 </style>
 </head>
 <body>
-  <h1>Kaku Future Atlas — Civilization Energy Summary</h1>
-  <div class="meta">Generated from Kaku Future Atlas by Mohammed KM | Sagan-Kardashev formula: K = (log10(P) - 6) / 10</div>
+  <h1>Frontier Future Atlas — Civilization Energy Summary</h1>
+  <div class="meta">Generated from Frontier Future Atlas by Mohammed KM | Sagan-Kardashev formula: K = (log10(P) - 6) / 10</div>
   <div class="grid">
     <div class="box"><div class="lbl">Kardashev Index</div><div class="val">Type ${powerBreakdown.k.toFixed(2)}</div></div>
     <div class="box"><div class="lbl">Total Power Output</div><div class="val">${formatWatts(powerBreakdown.total)}</div></div>

@@ -53,7 +53,7 @@ export default function App() {
             <circle cx="22" cy="22" r="2.75" fill="#111111" />
             <circle cx="33.2" cy="15.8" r="1.75" fill="#111111" />
           </svg>
-          <h1 className="site-title">Kaku Future Atlas</h1>
+          <h1 className="site-title">Frontier Future Atlas</h1>
         </div>
         <p className="site-subtitle">
           A playable visual guide to civilization energy, minds, quantum machines, and the physics of what comes next—distilled from Michio Kaku&apos;s five future-oriented books.
@@ -87,7 +87,7 @@ export default function App() {
 
       <footer className="site-footer">
         <span>
-          <strong>Kaku Future Atlas</strong> — Authored by Mohammed KM
+          <strong>Frontier Future Atlas</strong> — Authored by Mohammed KM
         </span>
         <span>
           Sources: Physics of the Impossible, Physics of the Future, The Future of the Mind, The Future of Humanity, Quantum Supremacy (100% client-side).
