@@ -75,12 +75,21 @@ export function Shell({ config }: { config: ShellConfig }) {
 
   return (
     <>
+      <header className="mkm-topbar">
+        <div className="mkm-topbar-inner">
+          <div className="mkm-brand">
+            <span className="mkm-brand-mark" aria-hidden="true">
+              <img src="/favicon.png?v=2" alt="" width="28" height="28" />
+            </span>
+            <span className="mkm-brand-name">{config.title}</span>
+            <span className="mkm-brand-sep" aria-hidden="true"></span>
+            <span className="mkm-brand-by">Mohammed KM</span>
+          </div>
+        </div>
+      </header>
       <header className="sh-top">
         <div className="sh-wrap">
           <div className="sh-head">
-            <div className="sh-eyebrow">
-              <a href="https://mohammed-km.in/projects">mohammed km</a> · {config.pillar}
-            </div>
             <h1 className="sh-title">{config.title}</h1>
             <p className="sh-sub">{config.subtitle}</p>
           </div>
