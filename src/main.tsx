@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './shell/shell.css';
 import { Shell, type ShellConfig } from './shell/Shell';
+import DefaultTab from './modules/kaku/Module';
 
 const config: ShellConfig = {
   pillar: 'worldview & physics',
@@ -17,6 +18,7 @@ const config: ShellConfig = {
         { kind: 'real', label: "Sagan's K formula" },
         { kind: 'model', label: 'unlock thresholds & feasibility scores' },
       ],
+      component: DefaultTab,
       load: () => import('./modules/kaku/Module'),
     },
     {

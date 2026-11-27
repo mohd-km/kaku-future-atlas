@@ -10,6 +10,7 @@ export type TabDef = {
   provenance: Provenance[];
   note?: string;
   load: () => Promise<{ default: React.ComponentType }>;
+  component?: React.ComponentType; // statically bundled default tab: paints with the first JS pass
 };
 export type ShellConfig = {
   pillar: string;
@@ -20,7 +21,8 @@ export type ShellConfig = {
 };
 
 const lazyCache = new Map<string, React.LazyExoticComponent<React.ComponentType>>();
-function lazyFor(t: TabDef) {
+function lazyFor(t: TabDef): React.ComponentType {
+  if (t.component) return t.component;
   if (!lazyCache.has(t.id)) lazyCache.set(t.id, React.lazy(t.load));
   return lazyCache.get(t.id)!;
 }
@@ -82,8 +84,6 @@ export function Shell({ config }: { config: ShellConfig }) {
               <img src="/favicon.png?v=2" alt="" width="28" height="28" />
             </span>
             <span className="mkm-brand-name">{config.title}</span>
-            <span className="mkm-brand-sep" aria-hidden="true"></span>
-            <span className="mkm-brand-by">Mohammed KM</span>
           </div>
         </div>
       </header>
