@@ -145,12 +145,12 @@ export default function QuantumLab() {
   }, [qubits]);
 
   return (
-    <section aria-label="Quantum Supremacy Explorer">
+    <section aria-label="Qubits versus classical memory explorer">
       <div className="section-head">
         <div>
-          <h2 className="section-title">the qubit wall</h2>
+          <h2 className="section-title">the qubit wall: why quantum computers are hard to copy</h2>
           <p className="section-lead">
-            Each extra qubit doubles the amplitudes a classical machine must store to simulate it: 16 × 2^N bytes.
+            A qubit (quantum bit) can hold a mix of 0 and 1 at once. To imitate N qubits, a normal computer must store 2^N numbers, 16 bytes each, so memory doubles with every qubit added: 50 qubits already need about 18 petabytes.
           </p>
         </div>
       </div>
@@ -158,21 +158,21 @@ export default function QuantumLab() {
       <div className="metrics-grid">
         <div className="metric-card">
           <div className="metric-label">
-            <span className="metric-term">Logical Qubits</span>
-            <span className="metric-plain">Quantum information units</span>
+            <span className="metric-term">Qubits (N)</span>
+            <span className="metric-plain">Error-corrected quantum bits</span>
           </div>
           <div className="metric-value">{qubits}</div>
         </div>
         <div className="metric-card">
           <div className="metric-label">
-            <span className="metric-term">Parallel States (2^N)</span>
-            <span className="metric-plain">Simultaneous quantum amplitudes</span>
+            <span className="metric-term">Possibilities held at once (2^N)</span>
+            <span className="metric-plain">Numbers a normal computer must track</span>
           </div>
           <div className="metric-value">{stateCount}</div>
         </div>
         <div className="metric-card">
           <div className="metric-label">
-            <span className="metric-term">Classical RAM needed</span>
+            <span className="metric-term">Normal-computer memory needed (RAM)</span>
             <span className="metric-plain">{fits ? `fits on ${machine.label.split(' ·')[0].toLowerCase()}` : `exceeds ${machine.label.split(' ·')[0].toLowerCase()} (max ${maxQubits} qubits)`}</span>
           </div>
           <div className="metric-value">{classicalRam}</div>

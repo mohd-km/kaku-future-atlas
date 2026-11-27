@@ -42,6 +42,21 @@ html, body { margin: 0; padding: 0; background: var(--sh-bg); color: var(--sh-in
 .sh-foot { border-top: 1px solid var(--sh-line); margin-top: 32px; padding: 18px 0 28px; font-size: 12px; color: var(--sh-muted);
   display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: space-between; }
 .sh-foot a { color: var(--sh-ink-2); }
+/* Plain-English story card at the top of every tab */
+.sh-story { margin: 6px 0 4px; padding: 14px 16px; border: 1px solid var(--sh-line); border-left: 3px solid var(--sh-accent);
+  border-radius: 8px; background: var(--sh-surface); max-width: 100%; overflow-wrap: anywhere; font-family: var(--sh-sans); }
+.sh-story-beats { display: grid; gap: 6px; }
+.sh-story-beats p { margin: 0; font-size: 14px; line-height: 1.5; color: var(--sh-ink); }
+.sh-story-k { display: inline-block; margin-right: 8px; font-family: var(--sh-mono); font-size: 10.5px; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--sh-accent); }
+.sh-story-try { color: var(--sh-ink); font-weight: 500; }
+.sh-story-terms { margin: 10px 0 0; padding-top: 10px; border-top: 1px dashed var(--sh-line-strong); display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 6px 18px; font-size: 12.5px; color: var(--sh-ink-2); }
+.sh-story-terms div { min-width: 0; }
+.sh-story-terms dt { display: inline; font-weight: 600; color: var(--sh-ink); }
+.sh-story-terms dt::after { content: ': '; }
+.sh-story-terms dd { display: inline; margin: 0; }
+@media (max-width: 480px) { .sh-story-terms { grid-template-columns: 1fr; } }
 @media (min-width: 1024px) {
   .sh-wrap { padding: 0 28px; }
   .sh-head { padding: 30px 0 16px; }

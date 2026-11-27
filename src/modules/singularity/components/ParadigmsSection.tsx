@@ -106,10 +106,11 @@ export function ParadigmsSection() {
       <section className="panel" aria-label="Animated six-paradigm compute curve">
         <div className="panel-header">
           <div className="panel-header-text">
-            <h2>Six Paradigms &amp; Brain-Parity Crossover (1900–2050)</h2>
+            <h2>Six generations of computers, and when $1,000 matches a brain (1900 to 2050)</h2>
             <p className="panel-lead">
-              Each computing paradigm hits an S-curve wall and hands off to the next. Dial brain
-              fidelity and hardware doubling time to recompute when $1,000 crosses brain parity.
+              Each hardware generation (paradigm) improves along an S-shaped curve, hits a physical
+              wall, then hands over to the next. Set how much computing a brain needs and how fast
+              hardware improves to see when $1,000 of hardware catches up with a brain.
             </p>
           </div>
           <div className="panel-actions">
@@ -121,7 +122,7 @@ export function ParadigmsSection() {
 
         <div className="metric-strip cols-4" style={{ marginBottom: 16 }}>
           <div className="metric-box highlight">
-            <span className="detail-item-label">$1k Crossover Year</span>
+            <span className="detail-item-label">Year $1,000 matches a brain</span>
             <span className="metric-big">
               {crossoverYearRounded <= 2025
                 ? '~2025 (Now)'
@@ -131,15 +132,15 @@ export function ParadigmsSection() {
             </span>
           </div>
           <div className="metric-box">
-            <span className="detail-item-label">Brain Threshold</span>
+            <span className="detail-item-label">Computing a brain needs</span>
             <span className="metric-big">10^{brainLog.toFixed(1)} cps</span>
           </div>
           <div className="metric-box">
-            <span className="detail-item-label">Doubling Time</span>
+            <span className="detail-item-label">Doubling time</span>
             <span className="metric-big">{doublingYears.toFixed(1)} yrs</span>
           </div>
           <div className="metric-box">
-            <span className="detail-item-label">Selected Paradigm</span>
+            <span className="detail-item-label">Selected generation</span>
             <span className="metric-big">P{paradigm.id} · {paradigm.shortName}</span>
           </div>
         </div>
@@ -333,12 +334,12 @@ export function ParadigmsSection() {
                 fontFamily="Inter, sans-serif"
                 fill="#555555"
               >
-                Calculations / sec / $1,000 (log10 scale)
+                Calculations per second per $1,000 (each grid line is 10x the one below)
               </text>
             </svg>
           </div>
           <div className="figure-caption">
-            <span>FIG. 1 — SIX COMPUTING PARADIGMS (KURZWEIL CURVE)</span>
+            <span>FIG. 1: SIX COMPUTING GENERATIONS (KURZWEIL CURVE)</span>
             <span>
               {crossoverInChart
                 ? `CROSSOVER: ~${crossoverYearRounded}`
@@ -352,7 +353,7 @@ export function ParadigmsSection() {
           <div className="slider-group">
             <div className="slider-header">
               <label htmlFor="brain-fidelity-slider" className="slider-label">
-                Brain-fidelity threshold (cps)
+                Computing a brain needs (cps: calculations per second)
               </label>
               <span className="slider-value">10^{brainLog.toFixed(1)} cps</span>
             </div>
@@ -393,7 +394,7 @@ export function ParadigmsSection() {
           <div className="slider-group">
             <div className="slider-header">
               <label htmlFor="doubling-slider" className="slider-label">
-                Hardware price-performance doubling time
+                Hardware price-performance doubling time (years for $1 to buy twice the computing)
               </label>
               <span className="slider-value">{doublingYears.toFixed(1)} years</span>
             </div>
@@ -407,8 +408,8 @@ export function ParadigmsSection() {
               onChange={(e) => setDoublingYears(Number(e.target.value))}
             />
             <span className="footnote">
-              Anchored at 2025 consumer hardware (~10^14 cps per $1,000). Faster doubling pulls the
-              P6 trajectory sharply upward.
+              Anchored at 2025 consumer hardware (~10^14 cps per $1,000). Faster doubling bends the
+              newest curve (P6) sharply upward.
             </span>
           </div>
         </div>
@@ -435,7 +436,7 @@ export function ParadigmsSection() {
 
         <details className="drawer">
           <summary>
-            Read more: P{paradigm.id} {paradigm.name} — mechanism, wall &amp; successor
+            Read more: P{paradigm.id} {paradigm.name}: how it worked, its wall, what came next
           </summary>
           <div className="drawer-body">
             <div className="detail-grid">
@@ -460,10 +461,12 @@ export function ParadigmsSection() {
       <section className="panel" aria-label="World compute versus Seth Lloyd ultimate limit">
         <div className="panel-header">
           <div className="panel-header-text">
-            <h3>World Compute vs. Seth Lloyd’s Ultimate Limit</h3>
+            <h3>All of today’s computing vs the physical ceiling (Seth Lloyd limit)</h3>
             <p className="panel-lead">
-              Logarithmic ceiling from a single brain (10^14 cps) to Earth’s quantum bound (10^75
-              ops/sec).
+              The Seth Lloyd limit is the most computing any lump of matter could ever do, set by
+              quantum physics and E = mc². On this log scale one brain does about 10^14 calculations a
+              second, the whole planet today about 10^24, and Earth turned into a perfect computer
+              about 10^75: that is 51 more powers of ten of headroom.
             </p>
           </div>
           <span className="mono-label">

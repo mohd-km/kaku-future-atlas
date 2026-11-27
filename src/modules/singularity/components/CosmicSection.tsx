@@ -264,10 +264,11 @@ export function CosmicSection() {
       <section className="panel" aria-label="Interactive Milky Way von Neumann probe simulator">
         <div className="panel-header">
           <div className="panel-header-text">
-            <h2>Milky Way von Neumann Probe Simulator</h2>
+            <h2>Self-copying probes crossing the Milky Way (von Neumann probes)</h2>
             <p className="panel-lead">
-              Dial probe cruise speed (0.01c–0.50c) and replication time to watch self-replicating
-              compute cross a 100,000-light-year galaxy.
+              A von Neumann probe flies to a star, builds copies of itself from local material and
+              sends them onward. Set its speed (1% to 50% of light speed, c) and how long each copy
+              takes, and watch the wave cross a galaxy 100,000 light-years wide.
             </p>
           </div>
           <div className="panel-actions">
@@ -294,26 +295,26 @@ export function CosmicSection() {
               aria-pressed={fermiMode}
               onClick={() => setFermiMode((f) => !f)}
             >
-              {fermiMode ? 'Fermi Lens: On' : 'Fermi Paradox Toggle'}
+              {fermiMode ? 'Fermi paradox view: on' : 'So where is everyone? (Fermi paradox)'}
             </button>
           </div>
         </div>
 
         <div className="metric-strip cols-4" style={{ marginBottom: 16 }}>
           <div className="metric-box highlight">
-            <span className="detail-item-label">Full Crossing Time</span>
+            <span className="detail-item-label">Time to cross the galaxy</span>
             <span className="metric-big">{formatYears(totalSaturationYears)}</span>
           </div>
           <div className="metric-box">
-            <span className="detail-item-label">Elapsed Wave</span>
+            <span className="detail-item-label">Time elapsed so far</span>
             <span className="metric-big">{formatYears(elapsedYears)}</span>
           </div>
           <div className="metric-box">
-            <span className="detail-item-label">Disk Covered</span>
+            <span className="detail-item-label">Galaxy covered</span>
             <span className="metric-big">{Math.round(simProgress * 100)}%</span>
           </div>
           <div className="metric-box">
-            <span className="detail-item-label">Share of Universe Age</span>
+            <span className="detail-item-label">Share of the universe’s age</span>
             <span className="metric-big">
               {pctOfUniverseAge < 0.01
                 ? `${pctOfUniverseAge.toFixed(4)}%`
@@ -332,14 +333,14 @@ export function CosmicSection() {
         </div>
         <div className="figure-caption">
           <span>FIG. 3 — MILKY WAY DISK (~100,000 LY · 20,000 HOPS AT 5 LY/HOP)</span>
-          <span>HARD LIMIT: c (100,000 YRS MIN)</span>
+          <span>HARD LIMIT: LIGHT SPEED, SO 100,000 YRS AT LEAST</span>
         </div>
 
         <div className="grid-2" style={{ marginTop: 18 }}>
           <div className="slider-group">
             <div className="slider-header">
               <label htmlFor="speed-slider" className="slider-label">
-                Probe cruise speed (fraction of light speed c)
+                Probe cruise speed (share of light speed, c)
               </label>
               <span className="slider-value">{speedC.toFixed(2)}c</span>
             </div>
@@ -357,7 +358,7 @@ export function CosmicSection() {
           <div className="slider-group">
             <div className="slider-header">
               <label htmlFor="rep-slider" className="slider-label">
-                Replication time per star system
+                Years to build copies at each star (replication time)
               </label>
               <span className="slider-value">{replicationYears} years</span>
             </div>
@@ -398,7 +399,7 @@ export function CosmicSection() {
           </div>
 
           <details className="drawer">
-            <summary>Read more: Fermi Paradox through a computational lens</summary>
+            <summary>Read more: why a busy galaxy could still look empty</summary>
             <div className="drawer-body">
               <div className="grid-3">
                 {FERMI_CARDS.map((card) => (

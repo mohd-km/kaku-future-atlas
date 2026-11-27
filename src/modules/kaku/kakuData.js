@@ -45,27 +45,27 @@ export function describeCivilizationTier(k) {
   if (k < 0.98) {
     return {
       tier: 'Type 0 (Transition)',
-      plain: 'Fossil & early renewables',
+      plain: 'Still mostly fossil fuels and early renewables',
       frontier: 'Class I emerging'
     };
   }
   if (k < 1.98) {
     return {
       tier: 'Type I (Planetary)',
-      plain: 'Full planetary energy harness',
+      plain: 'Uses all the energy reaching its planet',
       frontier: 'Class I unlocked'
     };
   }
   if (k < 2.95) {
     return {
       tier: 'Type II (Stellar)',
-      plain: 'Whole-star Dyson swarm',
+      plain: 'Uses its whole star, via a Dyson swarm',
       frontier: 'Class II unlocked'
     };
   }
   return {
     tier: 'Type III (Galactic)',
-    plain: 'Billions of stars harnessed',
+    plain: 'Uses the power of a whole galaxy',
     frontier: 'Class II+ cosmic scale'
   };
 }

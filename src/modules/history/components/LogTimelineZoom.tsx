@@ -139,9 +139,9 @@ export const LogTimelineZoom: React.FC = () => {
           }}
         >
           <div>
-            <h2 style={{ fontSize: '21px' }}>13.8-Billion-Year Logarithmic Zoom</h2>
+            <h2 style={{ fontSize: '21px' }}>13.8 billion years on one log-scale line</h2>
             <p style={{ margin: '4px 0 0', color: 'var(--ink-secondary)', fontSize: '14px' }}>
-              Jump across six deep-time eras or zoom into the parallel scientific-breakthrough track.
+              Each step left on the axis is 10 times further back in time. Jump to one of six eras, scroll or use Zoom to look closer, and click any dot for its story.
             </p>
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
@@ -185,7 +185,7 @@ export const LogTimelineZoom: React.FC = () => {
               WINDOW: {formatYearsAgo(Math.pow(10, logLeft))} &rarr; {formatYearsAgo(Math.pow(10, logRight))}
             </span>
             <span className="mono">
-              LOG SPAN: {span.toFixed(2)} decades ({zoomRatio}x zoom)
+              SHOWING: {span.toFixed(2)} powers of ten ({zoomRatio}x zoom)
             </span>
           </div>
 
@@ -372,7 +372,7 @@ export const LogTimelineZoom: React.FC = () => {
               {selectedEvent.displayDate} &middot; {selectedEvent.domain}
             </span>
             <span className="mono" style={{ fontSize: '12px', color: 'var(--ink-secondary)' }}>
-              log10(t) = {Math.log10(Math.max(1, selectedEvent.yearsAgo)).toFixed(2)}
+              position on axis, log10(years ago) = {Math.log10(Math.max(1, selectedEvent.yearsAgo)).toFixed(2)}
             </span>
           </div>
 
@@ -389,7 +389,7 @@ export const LogTimelineZoom: React.FC = () => {
           </div>
 
           <details className="editorial-drawer">
-            <summary>Mechanism</summary>
+            <summary>How it happened</summary>
             <div className="drawer-body">
               <p style={{ margin: 0 }}>{selectedEvent.deepNote}</p>
             </div>
@@ -397,7 +397,7 @@ export const LogTimelineZoom: React.FC = () => {
 
           <div style={{ marginTop: '16px' }}>
             <span className="metric-label" style={{ marginBottom: '8px', fontWeight: 600 }}>
-              Milestones in Current Window ({visibleEvents.length})
+              Events in this view ({visibleEvents.length})
             </span>
             <div className="event-strip">
               {visibleEvents.map((ev) => (
@@ -421,7 +421,7 @@ export const LogTimelineZoom: React.FC = () => {
         <div className="card">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
             <h3 style={{ fontSize: '19px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <FlaskConical size={18} color="var(--accent)" /> Scientific-Breakthrough Track
+              <FlaskConical size={18} color="var(--accent)" /> Science breakthroughs track
             </h3>
             <button
               type="button"
@@ -437,7 +437,7 @@ export const LogTimelineZoom: React.FC = () => {
             </button>
           </div>
           <p style={{ margin: '6px 0 12px', color: 'var(--ink-secondary)', fontSize: '14px' }}>
-            Filter by theory (episteme), instruments/practice (techne), or unifying synthesis.
+            Filter by new theories (episteme), new tools and practice (techne), or big ideas that joined fields together (synthesis).
           </p>
 
           <div className="chip-row" style={{ marginBottom: '12px' }}>

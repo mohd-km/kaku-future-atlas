@@ -102,23 +102,23 @@ export const CivilizationComparator: React.FC<Props> = ({
       {/* Top KPI Summary Bar */}
       <div className="grid-metrics">
         <div className="metric-box">
-          <span className="metric-label">Energy Capture</span>
+          <span className="metric-label">Energy per person (capture)</span>
           <span className="metric-value accent">
             {params.energyKcalPerCapita.toLocaleString()} kcal/d
           </span>
         </div>
         <div className="metric-box">
-          <span className="metric-label">Resilience Score</span>
+          <span className="metric-label">Resilience (0 to 100, higher is sturdier)</span>
           <span className="metric-value">{simulation.resilienceScore} / 100</span>
         </div>
         <div className="metric-box">
-          <span className="metric-label">Dominant Loop</span>
+          <span className="metric-label">Main feedback loop</span>
           <span className="metric-value" style={{ fontSize: '14px' }}>
             {simulation.dominantLoop.split(' ')[0]}
           </span>
         </div>
         <div className="metric-box">
-          <span className="metric-label">Est. Density / Scale</span>
+          <span className="metric-label">People per km² · biggest settlement</span>
           <span className="metric-value" style={{ fontSize: '15px' }}>
             {simulation.estimatedDensity}/km2 &middot; {formatCompactPop(simulation.estimatedSettlementPop)}
           </span>
@@ -129,10 +129,10 @@ export const CivilizationComparator: React.FC<Props> = ({
       <div className="grid-2">
         <div className="card">
           <h2 style={{ fontSize: '20px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <Sliders size={18} color="var(--accent)" /> Civilizational Stress Simulator
+            <Sliders size={18} color="var(--accent)" /> Society stress test
           </h2>
           <p style={{ margin: '4px 0 12px', color: 'var(--ink-secondary)', fontSize: '14px' }}>
-            Energy capture per regime follows published estimates (Morris); openness, shock and resilience are modelled indices.
+            Pick a society from history or set the sliders. Energy per person follows published historical estimates; openness, shocks and resilience are scores from this model, not measurements.
           </p>
 
           <div className="chip-row" style={{ marginBottom: '14px' }}>
@@ -151,7 +151,7 @@ export const CivilizationComparator: React.FC<Props> = ({
           <div className="slider-group">
             <div className="slider-header">
               <label htmlFor="energy-slider" className="slider-label">
-                Energy Capture per Capita (log scale)
+                Energy per person per day (log scale: each notch multiplies)
               </label>
               <span className="slider-readout">
                 {params.energyKcalPerCapita.toLocaleString()} kcal/day
@@ -175,7 +175,7 @@ export const CivilizationComparator: React.FC<Props> = ({
           </div>
 
           <div className="kard-bridge">
-            <span className="metric-label">Bridge to Kardashev</span>
+            <span className="metric-label">What this means on the Kardashev scale</span>
             <span className="mono">
               {perCapitaW.toLocaleString(undefined, { maximumFractionDigits: 0 })} W/person × 8.1 B people ={' '}
               {formatPower(worldW)} → Type {worldK.toFixed(2)}
@@ -185,7 +185,7 @@ export const CivilizationComparator: React.FC<Props> = ({
           <div className="slider-group">
             <div className="slider-header">
               <label htmlFor="openness-slider" className="slider-label">
-                Institutional Openness (Sparta 0% &harr; Athens/Popper 100%)
+                Openness to new ideas and outsiders (closed Sparta 0% to open Athens 100%)
               </label>
               <span className="slider-readout">{params.institutionalOpenness}%</span>
             </div>
@@ -206,7 +206,7 @@ export const CivilizationComparator: React.FC<Props> = ({
           <div className="slider-group">
             <div className="slider-header">
               <label htmlFor="shock-slider" className="slider-label">
-                Ecological &amp; Climate Shock Intensity
+                Size of climate and ecological shocks
               </label>
               <span className="slider-readout">{params.resourceShock}%</span>
             </div>
@@ -227,7 +227,7 @@ export const CivilizationComparator: React.FC<Props> = ({
           <div className="slider-group">
             <div className="slider-header">
               <label htmlFor="coupling-slider" className="slider-label">
-                Supply-Network Coupling (Local Iron &harr; Fragile Global Grid)
+                How tightly supply chains are linked (local 0% to fragile global web 100%)
               </label>
               <span className="slider-readout">{params.supplyCoupling}%</span>
             </div>
@@ -249,11 +249,11 @@ export const CivilizationComparator: React.FC<Props> = ({
         {/* Collapse Drivers Breakdown */}
         <div className="card">
           <h3 style={{ fontSize: '19px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <ShieldAlert size={18} color="var(--accent)" /> Collapse Drivers &amp; Loop Verdict
+            <ShieldAlert size={18} color="var(--accent)" /> What could make it collapse
           </h3>
           <p style={{ margin: '4px 0 14px', color: 'var(--ink-secondary)', fontSize: '14px' }}>
-            Verdict: <strong style={{ color: 'var(--ink-primary)' }}>{simulation.dominantLoop}</strong> &middot; Net
-            Surplus Ratio <span className="mono">{simulation.netSurplusRatio}x</span>
+            Verdict: <strong style={{ color: 'var(--ink-primary)' }}>{simulation.dominantLoop}</strong> &middot; Energy surplus
+            (net surplus ratio) <span className="mono">{simulation.netSurplusRatio}x</span>
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -294,7 +294,7 @@ export const CivilizationComparator: React.FC<Props> = ({
       <div className="grid-equal-2">
         {/* Visual 1: Log-Log Energy vs Density */}
         <div className="card-white">
-          <h3 style={{ fontSize: '18px' }}>Energy Capture vs. Population Density (Log-Log)</h3>
+          <h3 style={{ fontSize: '18px' }}>Energy per person vs people per km² (both axes log scale)</h3>
           <p style={{ margin: '4px 0 12px', color: 'var(--ink-secondary)', fontSize: '13.5px' }}>
             Click a historical dot to load it; the blue ring is your live scenario.
           </p>
@@ -563,7 +563,7 @@ export const CivilizationComparator: React.FC<Props> = ({
         </div>
 
         <details className="editorial-drawer">
-          <summary>Governing Model: Systems Loops, Open Societies &amp; Collapse Mechanics</summary>
+          <summary>How the model works: feedback loops, open societies and collapse</summary>
           <div className="drawer-body">
             <div className="equation-block">
               dP/dt = P * [ R(E, Openness) - B(ClimateShock, SupplyCoupling, ComplexityOverhead, Rigidity) ]

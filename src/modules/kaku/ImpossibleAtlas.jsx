@@ -13,9 +13,9 @@ const CLASSES = ['Class I', 'Class II', 'Class III'];
 
 const FILTERS = [
   { id: 'all', label: 'All 12' },
-  { id: 'Class I', label: 'Class I (Centuries)' },
-  { id: 'Class II', label: 'Class II (Millennia)' },
-  { id: 'Class III', label: 'Class III (Breaks Law)' }
+  { id: 'Class I', label: 'Class I (centuries away)' },
+  { id: 'Class II', label: 'Class II (millennia away)' },
+  { id: 'Class III', label: 'Class III (breaks physics)' }
 ];
 
 export default function ImpossibleAtlas({ k = 0.73 }) {
@@ -39,12 +39,12 @@ export default function ImpossibleAtlas({ k = 0.73 }) {
   const visibleIds = new Set(visibleIdeas.map((i) => i.id));
 
   return (
-    <section aria-label="Physics of the Impossible 12 Ideas Explorer">
+    <section aria-label="Twelve future technologies explorer">
       <div className="section-head">
         <div>
-          <h2 className="section-title">feasibility matrix</h2>
+          <h2 className="section-title">what could we build? (feasibility matrix)</h2>
           <p className="section-lead">
-            Twelve sci-fi technologies by Kaku&apos;s impossibility class and the energy tier they need. Shaded cells are within reach of your Type {k.toFixed(2)} budget above.
+            Twelve science-fiction technologies, sorted by how impossible they are (rows: Class I, II, III) and how much energy they need (columns). Shaded cells are within reach of your Type {k.toFixed(2)} budget above. Click any idea to see the physics behind it.
           </p>
         </div>
       </div>
@@ -149,6 +149,7 @@ export default function ImpossibleAtlas({ k = 0.73 }) {
               Physics Barrier
             </text>
           </svg>
+          <div style={{ fontSize: '0.78rem', color: 'var(--ink-secondary)', maxWidth: 170, margin: '0 auto' }}>How hard physics makes it: 0 easy, 100 impossible (our estimate)</div>
         </div>
 
         <div>
@@ -158,7 +159,7 @@ export default function ImpossibleAtlas({ k = 0.73 }) {
             </h3>
             <span className={`class-badge ${selected.clsCode}`}>{selected.cls}</span>
             <span className="mono-tag">Needs: {selTier.label}{Number.isFinite(selTier.k) ? ` (K ≥ ${selTier.k.toFixed(2)})` : ''}</span>
-            <span className={`reach-tag ${selTier.k <= k ? 'ok' : ''}`}>{selTier.k <= k ? 'energy-feasible now' : Number.isFinite(selTier.k) ? `needs +${(selTier.k - k).toFixed(2)} K` : 'violates known law'}</span>
+            <span className={`reach-tag ${selTier.k <= k ? 'ok' : ''}`}>{selTier.k <= k ? 'enough energy now' : Number.isFinite(selTier.k) ? `needs +${(selTier.k - k).toFixed(2)} K` : 'breaks a known law of physics'}</span>
           </div>
 
           <p style={{ margin: '0 0 10px', color: 'var(--ink-secondary)', fontSize: '0.94rem' }}>

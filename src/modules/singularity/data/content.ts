@@ -222,7 +222,7 @@ export const COMPUTE_SCALES: ComputeScaleItem[] = [
   },
   {
     id: 'ultimate-laptop',
-    label: '1 kg "ultimate laptop" (Seth Lloyd, 2000)',
+    label: '1 kg "ultimate laptop": the Seth Lloyd limit',
     logMin: 50,
     logMax: 50,
     displayRange: '~10^50 ops/sec',
@@ -233,7 +233,7 @@ export const COMPUTE_SCALES: ComputeScaleItem[] = [
   },
   {
     id: 'earth-computronium',
-    label: 'Earth’s matter as computronium',
+    label: 'All of Earth turned into a perfect computer (computronium)',
     logMin: 75,
     logMax: 75,
     displayRange: '~10^75 ops/sec',

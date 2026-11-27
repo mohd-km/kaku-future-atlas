@@ -78,10 +78,11 @@ export function BrainSection() {
       <section className="panel" aria-label="Live biological versus electronic pulse comparator">
         <div className="panel-header">
           <div className="panel-header-text">
-            <h2>Live Comparator: Biological (~200 Hz) vs. Electronic (~1 GHz)</h2>
+            <h2>Brain vs chip: about 200 pulses a second vs about a billion (200 Hz vs 1 GHz)</h2>
             <p className="panel-lead">
-              Neurons fire slowly in massive 3D parallel waves on 20 W; silicon switches millions of
-              times faster and clones skills instantaneously.
+              Brain cells fire slowly but all at once, on about 20 W (a dim light bulb). Chips switch
+              millions of times faster and can copy a learned skill to another chip instantly. Hz means
+              times per second.
             </p>
           </div>
           <div className="panel-actions">
@@ -316,10 +317,10 @@ export function BrainSection() {
       <section className="panel" aria-label="Brain emulation fidelity explorer">
         <div className="panel-header">
           <div className="panel-header-text">
-            <h3>Brain Emulation Fidelity Explorer</h3>
+            <h3>How detailed must a brain copy be? (emulation fidelity)</h3>
             <p className="panel-lead">
-              Hardware demand shifts by 6+ orders of magnitude depending on how deeply biology is
-              modeled.
+              Copying what the brain does needs far less computing than copying every molecule: the
+              gap is over a million times (6+ powers of ten).
             </p>
           </div>
         </div>

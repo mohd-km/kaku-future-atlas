@@ -1,6 +1,12 @@
 import React, { Suspense, useEffect, useState } from 'react';
 
 export type Provenance = { kind: 'real' | 'model' | 'synthetic'; label: string };
+export type Story = {
+  problem: string;
+  how: string;
+  tryThis: string;
+  terms?: [string, string][];
+};
 export type TabDef = {
   id: string;
   label: string;
@@ -9,6 +15,7 @@ export type TabDef = {
   scope: string; // module folder name, wrapper gets class m-<scope>
   provenance: Provenance[];
   note?: string;
+  story?: Story;
   load: () => Promise<{ default: React.ComponentType }>;
   component?: React.ComponentType; // statically bundled default tab: paints with the first JS pass
 };
@@ -19,6 +26,25 @@ export type ShellConfig = {
   tabs: TabDef[];
   footer: string;
 };
+
+function StoryCard({ story }: { story: Story }) {
+  return (
+    <div className="sh-story" aria-label="What this tab is about">
+      <div className="sh-story-beats">
+        <p><span className="sh-story-k">The question</span>{story.problem}</p>
+        <p><span className="sh-story-k">How it works</span>{story.how}</p>
+        <p className="sh-story-try"><span className="sh-story-k">Try this first</span>{story.tryThis}</p>
+      </div>
+      {story.terms && story.terms.length ? (
+        <dl className="sh-story-terms" aria-label="Plain words for this tab">
+          {story.terms.map(([t, d]) => (
+            <div key={t}><dt>{t}</dt><dd>{d}</dd></div>
+          ))}
+        </dl>
+      ) : null}
+    </div>
+  );
+}
 
 const lazyCache = new Map<string, React.LazyExoticComponent<React.ComponentType>>();
 function lazyFor(t: TabDef): React.ComponentType {
@@ -120,6 +146,7 @@ export function Shell({ config }: { config: ShellConfig }) {
           const C = lazyFor(t);
           return (
             <section key={t.id} className={`sh-panel m-${t.scope}`} hidden={t.id !== active} role="tabpanel" aria-label={t.label}>
+              {t.story ? <div className="sh-wrap"><StoryCard story={t.story} /></div> : null}
               <Suspense fallback={<div className="sh-wrap" style={{ padding: 40, color: '#6b6b68' }}>Loading…</div>}>
                 <C />
               </Suspense>

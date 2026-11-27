@@ -144,9 +144,9 @@ export const ForcesUnificationLab: React.FC<Props> = ({
   return (
     <section aria-label="Fundamental Forces Energy-Scale Unification Comparator">
       <div className="section-header">
-        <h2 className="section-title">fundamental forces unification</h2>
+        <h2 className="section-title">do the forces of nature merge? (unification)</h2>
         <p className="section-lead">
-          Sweep energy from atomic scales to the Planck scale and watch the three gauge couplings run (1-loop renormalization group), with or without supersymmetry.
+          Electromagnetism, the weak force (behind radioactive decay) and the strong force (holding atomic nuclei together) have very different strengths today, but their strengths shift as collision energy rises. Slide energy from atoms up to the highest scale physics allows (the Planck scale) and see whether the three lines meet, with or without supersymmetry (SUSY: an idea that every known particle has a heavier partner). Maths: 1-loop renormalisation group.
         </p>
       </div>
 
@@ -164,7 +164,7 @@ export const ForcesUnificationLab: React.FC<Props> = ({
           <div className="control-group" style={{ flex: '1 1 320px' }}>
             <div className="control-header">
               <label htmlFor="energy-scale-slider" className="control-label">
-                Probe Energy Scale (log10 GeV)
+                Collision energy (GeV, log scale: each notch multiplies)
               </label>
               <span className="control-readout">
                 {formatSci(energyGeV, 2)} GeV (10^{logEnergyGeV.toFixed(1)})
@@ -194,7 +194,7 @@ export const ForcesUnificationLab: React.FC<Props> = ({
               className={`btn ${useSusy ? 'btn-primary' : ''}`}
               onClick={() => onUseSusyChange(true)}
             >
-              SUSY (MSSM)
+              With SUSY (MSSM)
             </button>
           </div>
         </div>
@@ -227,9 +227,9 @@ export const ForcesUnificationLab: React.FC<Props> = ({
               color: 'var(--ink-secondary)',
             }}
           >
-            <span>FIG 3.1 — INVERSE GAUGE COUPLINGS (1 / alpha_i) VS LOG10(E / GeV)</span>
+            <span>FIG 3.1: FORCE STRENGTH, SHOWN AS 1 / ALPHA (LOWER = STRONGER), VS COLLISION ENERGY (LOG10 GEV)</span>
             <span>
-              Gap to Planck: {gapToPlanck > 1.2 ? `${formatSci(gapToPlanck, 1)}x` : 'At Planck Scale'}
+              Energy still to go to the Planck scale: {gapToPlanck > 1.2 ? `${formatSci(gapToPlanck, 1)}x` : 'At Planck Scale'}
             </span>
           </div>
 
@@ -413,8 +413,8 @@ export const ForcesUnificationLab: React.FC<Props> = ({
               </div>
               <div style={{ fontSize: '12px', color: 'var(--ink-secondary)' }}>
                 <div><strong>Carrier:</strong> {fc.carrier}</div>
-                <div><strong>String:</strong> {fc.stringType}</div>
-                <div><strong>QFT:</strong> {fc.renorm}</div>
+                <div><strong>In string theory:</strong> {fc.stringType}</div>
+                <div><strong>Quantum maths (QFT):</strong> {fc.renorm}</div>
               </div>
             </div>
           ))}
@@ -423,7 +423,7 @@ export const ForcesUnificationLab: React.FC<Props> = ({
 
       {/* Collapsible Deep Theory Drawers */}
       <details className="theory-drawer">
-        <summary>Why QED Renormalizes &amp; Gravity Explodes (Loop Divergences &amp; String Cutoff)</summary>
+        <summary>Why the maths works for light but breaks for gravity (QED vs gravity, and the string fix)</summary>
         <div className="drawer-body">
           <div className="equation-block">
             Path Integral: Z = integral D[phi] exp(i S[phi] / hbar) | Polyakov Action: S_P = -(T/2) integral d^2 sigma sqrt(-h) h^ab d_a X^mu d_b X_mu
@@ -470,7 +470,7 @@ export const ForcesUnificationLab: React.FC<Props> = ({
       </details>
 
       <details className="theory-drawer">
-        <summary>Experimental Bounds &amp; Verification Status (Nov 2026)</summary>
+        <summary>What experiments have tested so far (Nov 2026)</summary>
         <div className="drawer-body">
           <div className="table-wrap">
             <table className="data-table">

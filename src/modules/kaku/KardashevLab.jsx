@@ -166,7 +166,7 @@ export default function KardashevLab({ onKChange }) {
   </table>
   <h2>Unlocked Technologies (${unlockedTechs.length} of ${KARDASHEV_UNLOCKS.length})</h2>
   <ul>${unlockedList || '<li>Raise your energy budget above Type 0.78 to unlock post-fossil planetary technologies.</li>'}</ul>
-  <div class="foot">Baseline: world primary energy 2023 (~620 EJ/yr, Energy Institute Statistical Review 2024). Technology thresholds are illustrative, framed after Kardashev (1964), Sagan (1973) and Kaku (2018).</div>
+  <div class="foot">Baseline: world primary energy 2023 (~620 EJ/yr, Energy Institute Statistical Review 2024). Technology thresholds are illustrative, framed after Kardashev (1964) and Sagan (1973).</div>
 </body>
 </html>`;
 
@@ -370,21 +370,21 @@ export default function KardashevLab({ onKChange }) {
       <div className="metrics-grid">
         <div className="metric-card">
           <div className="metric-label">
-            <span className="metric-term">Kardashev Index</span>
-            <span className="metric-plain">K = (log10 P − 6) / 10</span>
+            <span className="metric-term">Kardashev rating (K)</span>
+            <span className="metric-plain">Power on a 0 to 3 scale: K = (log10 P − 6) / 10</span>
           </div>
           <div className="metric-value">Type {powerBreakdown.k.toFixed(2)}</div>
         </div>
         <div className="metric-card">
           <div className="metric-label">
-            <span className="metric-term">Total Power</span>
+            <span className="metric-term">Total power used</span>
             <span className="metric-plain">Clean share {(powerBreakdown.cleanShare * 100).toFixed(0)}%</span>
           </div>
           <div className="metric-value">{formatWatts(powerBreakdown.total)}</div>
         </div>
         <div className="metric-card">
           <div className="metric-label">
-            <span className="metric-term">Civilization Tier</span>
+            <span className="metric-term">Civilisation type</span>
             <span className="metric-plain">{tierInfo.plain}</span>
           </div>
           <div className="metric-value">{tierInfo.tier}</div>
@@ -424,8 +424,8 @@ export default function KardashevLab({ onKChange }) {
           <div className="slider-group">
             <div className="slider-header">
               <label htmlFor="master-k-slider" className="slider-label">
-                Kardashev Scale
-                <span className="slider-sub">Quick sweep</span>
+                Kardashev rating
+                <span className="slider-sub">Quick sweep: sets every source for you</span>
               </label>
               <span className="slider-readout">Type {powerBreakdown.k.toFixed(2)}</span>
             </div>
@@ -444,7 +444,7 @@ export default function KardashevLab({ onKChange }) {
             <div className="slider-header">
               <label htmlFor="fossil-slider" className="slider-label">
                 Fossil fuels
-                <span className="slider-sub">% of 2023 use (hydro fixed at 1.3 TW)</span>
+                <span className="slider-sub">% of 2023 use (hydro power stays at 1.3 TW)</span>
               </label>
               <span className="slider-readout">{formatWatts(powerBreakdown.pFossil)}</span>
             </div>
@@ -463,7 +463,7 @@ export default function KardashevLab({ onKChange }) {
             <div className="slider-header">
               <label htmlFor="solar-slider" className="slider-label">
                 Wind &amp; solar
-                <span className="slider-sub">Log scale · 1.6 TW in 2023</span>
+                <span className="slider-sub">Each notch multiplies the power · 1.6 TW in 2023</span>
               </label>
               <span className="slider-readout">{formatWatts(powerBreakdown.pSolar)}</span>
             </div>
@@ -481,8 +481,8 @@ export default function KardashevLab({ onKChange }) {
           <div className="slider-group">
             <div className="slider-header">
               <label htmlFor="fission-slider" className="slider-label">
-                Nuclear Fission
-                <span className="slider-sub">Log scale · 0.79 TW in 2023</span>
+                Nuclear fission (splitting atoms)
+                <span className="slider-sub">Each notch multiplies the power · 0.79 TW in 2023</span>
               </label>
               <span className="slider-readout">{formatWatts(powerBreakdown.pFission)}</span>
             </div>
@@ -500,8 +500,8 @@ export default function KardashevLab({ onKChange }) {
           <div className="slider-group">
             <div className="slider-header">
               <label htmlFor="fusion-slider" className="slider-label">
-                Nuclear Fusion
-                <span className="slider-sub">Seawater hydrogen reactors</span>
+                Nuclear fusion (joining atoms, like the Sun)
+                <span className="slider-sub">Reactors fuelled by hydrogen from seawater</span>
               </label>
               <span className="slider-readout">{formatWatts(powerBreakdown.pFusion)}</span>
             </div>
@@ -519,8 +519,8 @@ export default function KardashevLab({ onKChange }) {
           <div className="slider-group">
             <div className="slider-header">
               <label htmlFor="orbital-slider" className="slider-label">
-                Orbital &amp; Stellar Arrays
-                <span className="slider-sub">Space solar to Dyson swarm</span>
+                Solar collectors in space
+                <span className="slider-sub">From orbiting panels up to a Dyson swarm around a star</span>
               </label>
               <span className="slider-readout">{formatWatts(powerBreakdown.pOrbital)}</span>
             </div>
@@ -540,7 +540,7 @@ export default function KardashevLab({ onKChange }) {
       <div className="unlock-section">
         <div className="unlock-header">
           <h3>
-            Unlocked Technologies ({unlockedTechs.length} of {KARDASHEV_UNLOCKS.length})
+            Technologies within reach ({unlockedTechs.length} of {KARDASHEV_UNLOCKS.length})
           </h3>
           <button type="button" className="action-btn" onClick={downloadSummary}>
             Download summary
@@ -579,7 +579,7 @@ export default function KardashevLab({ onKChange }) {
         <summary>Formula &amp; data</summary>
         <div className="drawer-body">
           <p>
-            Sagan's continuous Kardashev rating: <code>K = (log10(P) - 6) / 10</code>, P in watts. Type I = 10^16 W, Type II = 10^26 W (a star), Type III = 10^36 W (a galaxy).
+            Sagan's version of the Kardashev rating, which allows decimals: <code>K = (log10(P) - 6) / 10</code>, P in watts. Type I = 10^16 W (a planet), Type II = 10^26 W (a star), Type III = 10^36 W (a galaxy). Each whole step is 10 billion times more power.
           </p>
           <p>
             Today's baseline: world primary energy 2023 ≈ 620 EJ/yr ≈ 19.6 TW (Energy Institute Statistical Review 2024), giving K ≈ 0.73. Technology unlock thresholds are illustrative.

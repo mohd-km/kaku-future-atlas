@@ -265,9 +265,9 @@ export const RelativityLab: React.FC<Props> = ({
   return (
     <section aria-label="Special and General Relativity Calculator">
       <div className="section-header">
-        <h2 className="section-title">special &amp; general relativity</h2>
+        <h2 className="section-title">speed, gravity and time (relativity)</h2>
         <p className="section-lead">
-          Set a velocity, a black-hole mass and your distance from it; every number is computed from textbook equations with CODATA constants.
+          Set a speed, a black hole's mass and your distance from it. Speed slows your clock (special relativity, SR) and so does strong gravity (general relativity, GR). Every number comes from the standard equations.
         </p>
       </div>
 
@@ -275,7 +275,7 @@ export const RelativityLab: React.FC<Props> = ({
         {/* Left: Embedded Dark Physics Figure */}
         <div className="figure-box">
           <div className="figure-header">
-            <span>FIG 2.1 — SCHWARZSCHILD METRIC &amp; DUAL CLOCKS</span>
+            <span>FIG 2.1: CURVED SPACE NEAR A BLACK HOLE, AND TWO CLOCKS</span>
             <span>r_s = {formatRadius(res.schwarzschildRadiusKm)}</span>
           </div>
           <div className="figure-canvas-wrap">
@@ -289,7 +289,7 @@ export const RelativityLab: React.FC<Props> = ({
           </div>
           <div className="figure-caption">
             <span>v/c = {res.beta.toFixed(4)} | gamma = {res.gamma < 1000 ? res.gamma.toFixed(3) : formatSci(res.gamma, 2)}</span>
-            <span>Combined Clock: {(res.combinedClockRate * 100).toFixed(1)}%</span>
+            <span>Your clock runs at {(res.combinedClockRate * 100).toFixed(1)}% speed</span>
           </div>
         </div>
 
@@ -299,7 +299,7 @@ export const RelativityLab: React.FC<Props> = ({
           <div className="control-group">
             <div className="control-header">
               <label htmlFor="sr-velocity" className="control-label">
-                Relative Velocity (v / c)
+                Your speed, as a share of light speed (v / c)
               </label>
               <span className="control-readout">
                 {(res.beta * 100).toFixed(3)}% c
@@ -332,7 +332,7 @@ export const RelativityLab: React.FC<Props> = ({
           <div className="control-group">
             <div className="control-header">
               <label htmlFor="gr-mass" className="control-label">
-                Black Hole Mass (Solar Masses)
+                Black hole mass, in Suns (M_sun)
               </label>
               <span className="control-readout">{formatSci(massSolar, 2)} M_sun</span>
             </div>
@@ -363,7 +363,7 @@ export const RelativityLab: React.FC<Props> = ({
           <div className="control-group">
             <div className="control-header">
               <label htmlFor="gr-radius" className="control-label">
-                Observer Distance (r / r_s)
+                Your distance, in event-horizon radii (r / r_s)
               </label>
               <span className="control-readout">
                 {radiusRatioRs.toFixed(2)} r_s ({formatRadius(res.observerRadiusKm)})
@@ -385,42 +385,42 @@ export const RelativityLab: React.FC<Props> = ({
       {/* Live Computed Metrics Grid */}
       <div className="grid-metrics grid-metrics-4" style={{ marginTop: '16px' }}>
         <div className="metric-tile">
-          <span className="metric-label">Lorentz Factor (gamma)</span>
+          <span className="metric-label">Time stretch from speed (Lorentz factor, γ)</span>
           <span className="metric-value accent">
             {res.gamma < 1000 ? res.gamma.toFixed(4) : formatSci(res.gamma, 2)}
           </span>
-          <span className="metric-sub">Length L/L_0 = {res.lengthContraction.toFixed(4)}</span>
+          <span className="metric-sub">1 s for you = {res.gamma < 1000 ? res.gamma.toFixed(3) : formatSci(res.gamma, 2)} s at home · lengths shrink to {res.lengthContraction.toFixed(4)}</span>
         </div>
 
         <div className="metric-tile">
-          <span className="metric-label">SR vs GR Clock Rate</span>
+          <span className="metric-label">Clock speed from motion / gravity (SR / GR)</span>
           <span className="metric-value">
             {res.srClockRate.toFixed(3)} / {res.grClockRate.toFixed(3)}
           </span>
           <span className="metric-sub">
-            Combined: {res.combinedClockRate.toFixed(4)} s per distant s
+            Both together: {res.combinedClockRate.toFixed(4)} s for you per 1 s far away
           </span>
         </div>
 
         <div className="metric-tile">
-          <span className="metric-label">Schwarzschild Radius</span>
+          <span className="metric-label">Event horizon radius (Schwarzschild radius)</span>
           <span className="metric-value">{formatRadius(res.schwarzschildRadiusKm)}</span>
           <span className="metric-sub">
-            Escape v at r: {(res.escapeVelocityBeta * 100).toFixed(1)}% c
+            Speed needed to escape from you: {(res.escapeVelocityBeta * 100).toFixed(1)}% c
           </span>
         </div>
 
         <div className="metric-tile">
-          <span className="metric-label">Hawking Temperature</span>
+          <span className="metric-label">Black hole glow temperature (Hawking)</span>
           <span className="metric-value">{formatSci(res.hawkingTempK, 2)} K</span>
           <span className="metric-sub">
-            Entropy: {formatSci(res.bekensteinEntropyBits, 2)} bits
+            Information it holds (entropy): {formatSci(res.bekensteinEntropyBits, 2)} bits
           </span>
         </div>
       </div>
 
       <div className="ke-bridge">
-        <span className="metric-label">Energy bill for a 1-tonne starship at {(res.beta * 100).toFixed(res.beta < 0.01 ? 4 : 1)}% c</span>
+        <span className="metric-label">Energy needed to push a 1-tonne starship to {(res.beta * 100).toFixed(res.beta < 0.01 ? 4 : 1)}% c</span>
         <span className="mono">
           (gamma − 1) m c² = {formatSci(keJ, 2)} J ≈ {keWorldYears >= 0.01 ? keWorldYears.toFixed(2) : formatSci(keWorldYears, 2)} × world primary energy in 2023
         </span>
@@ -428,7 +428,7 @@ export const RelativityLab: React.FC<Props> = ({
 
       {/* Collapsible Theory Drawers */}
       <details className="theory-drawer">
-        <summary>Equations: Lorentz Factor, Einstein Field Equations &amp; Black-Hole Thermodynamics</summary>
+        <summary>The equations behind these numbers (Lorentz factor, Einstein field equations, black-hole heat)</summary>
         <div className="drawer-body">
           <div className="equation-block">
             SR: gamma = 1 / sqrt(1 - v^2/c^2) | dtau/dt = 1 / gamma | E_k = (gamma - 1) m c^2

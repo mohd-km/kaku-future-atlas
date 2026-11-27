@@ -9,8 +9,8 @@ export default function KardashevModule() {
   return (
     <div className="mod-wrap">
       <div className="mod-head">
-        <h2 className="section-title">planetary energy budget</h2>
-        <p className="section-lead">Start from 2023's real energy mix, phase out fossil fuels or scale clean sources, and watch the Kardashev rating move.</p>
+        <h2 className="section-title">planetary energy budget builder</h2>
+        <p className="section-lead">Start from the world's real 2023 energy mix, cut fossil fuels or grow clean sources, and watch the Kardashev rating move.</p>
       </div>
       <KardashevLab onKChange={setK} />
       <hr className="mod-divider" />

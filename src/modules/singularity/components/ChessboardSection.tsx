@@ -69,8 +69,8 @@ export function ChessboardSection() {
           <div className="panel-header-text">
             <h2>The Second Half of the Chessboard</h2>
             <p className="panel-lead">
-              Double 1 grain of rice on each square. Click any square or press Play to feel why
-              square 33 breaks linear intuition.
+              Put 1 grain of rice on the first square and double it on each square after. Click any
+              square or press Play: the second half is where doubling outruns everyday intuition.
             </p>
           </div>
           <div className="panel-actions">
@@ -156,11 +156,11 @@ export function ChessboardSection() {
 
             <div className="metric-strip">
               <div className="metric-box highlight">
-                <span className="detail-item-label">Exponential (2^{square - 1})</span>
+                <span className="detail-item-label">Doubling (exponential, 2^{square - 1})</span>
                 <span className="metric-big">{formatBigIntGrains(square)}</span>
               </div>
               <div className="metric-box">
-                <span className="detail-item-label">Linear (1,000 / step)</span>
+                <span className="detail-item-label">Adding (linear, +1,000 per square)</span>
                 <span className="metric-big">{linearExpectation.toLocaleString()}</span>
               </div>
             </div>
@@ -191,7 +191,7 @@ export function ChessboardSection() {
             {/* Live log-scale divergence bar */}
             <div className="panel-subtle" style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               <div className="scale-row-top">
-                <span className="detail-item-label">Exponential vs. Linear (log10 scale)</span>
+                <span className="detail-item-label">Doubling vs adding (log scale: each step is 10x)</span>
                 <span className="mono-label">10^{expLog.toFixed(1)} vs 10^{linLog.toFixed(1)}</span>
               </div>
               <div className="scale-track" aria-hidden="true">
