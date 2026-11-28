@@ -1,23 +1,12 @@
-# Civilization & Futures Atlas
+# Exponential Futures Atlas
 
-Live: https://future.mohammed-km.in
+Live: https://future.mohammed-km.in/
 
-One unbroken interactive arc from cosmic physics to civilisational futures: energy budgets on the Kardashev scale, computing paradigms against physical limits, a 13.8-billion-year timeline, and relativity.
+Two interactive lessons on where civilisation is heading: how much energy humanity uses and what more energy would unlock, and how fast computers grow towards the hard limit set by physics.
 
-Merges the frontier future atlas, computational singularity, big history and cosmology & relativity labs. Old singularity, history and cosmos subdomains redirect to their tabs.
+Tabs (deep-linkable): `#kardashev`, `#singularity`.
 
-## Modules
-
-- **#kardashev**: Planetary energy-budget builder that computes a live Kardashev rating (Sagan's formula) from Type ~0.73 toward Type III, plus a Class I/II/III physics feasibility matrix.
-- **#singularity**: Six computing paradigms 1900-2050 against Seth Lloyd's physical limits, a biological vs silicon brain comparator, an animated von Neumann probe canvas and the 64-square chessboard.
-- **#history**: Zoomable logarithmic timeline from the Big Bang to today and an energy-capture-per-capita comparator across civilisations.
-- **#cosmos**: Special and general relativity calculator (Lorentz time dilation, Schwarzschild horizon) and a fundamental-forces unification visual.
-
-Tabs are deep-linkable, e.g. `https://future.mohammed-km.in/#cosmos`.
-
-## Real vs modelled
-
-World energy figures, historical compute price-performance and physical constants are public data; extrapolations and futures are modelled.
+Split out of Civilization & Futures Atlas (future.mohammed-km.in) on 28 November 2026 so every project covers one clear subject.
 
 ## Run locally
 

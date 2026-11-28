@@ -27,6 +27,23 @@ export type ShellConfig = {
   footer: string;
 };
 
+
+class TabBoundary extends React.Component<{ children: React.ReactNode }, { failed: boolean }> {
+  state = { failed: false };
+  static getDerivedStateFromError() { return { failed: true }; }
+  render() {
+    if (!this.state.failed) return this.props.children;
+    return (
+      <div className="sh-wrap" style={{ padding: 40, color: '#555555' }}>
+        <p style={{ margin: '0 0 12px' }}>This lesson hit an unexpected input and stopped. Reset it to start again.</p>
+        <button type="button" onClick={() => this.setState({ failed: false })} style={{ font: 'inherit', padding: '8px 14px', borderRadius: 8, border: '1px solid #d4d4d0', background: '#fff', cursor: 'pointer' }}>
+          Reset
+        </button>
+      </div>
+    );
+  }
+}
+
 function StoryCard({ story }: { story: Story }) {
   return (
     <div className="sh-story" aria-label="What this tab is about">
@@ -75,7 +92,7 @@ export function Shell({ config }: { config: ShellConfig }) {
   useEffect(() => {
     setVisited((v) => (v.includes(active) ? v : [...v, active]));
     const t = config.tabs.find((x) => x.id === active)!;
-    document.title = `${t.label} · ${config.title} · Mohammed KM`;
+    document.title = config.tabs.length > 1 ? `${t.label} · ${config.title} · Mohammed KM` : `${config.title} · Mohammed KM`;
   }, [active]);
 
   const go = (id: string) => {
@@ -119,7 +136,7 @@ export function Shell({ config }: { config: ShellConfig }) {
             <h1 className="sh-title">{config.title}</h1>
             <p className="sh-sub">{config.subtitle}</p>
           </div>
-          {tracks.length ? (
+          {config.tabs.length < 2 ? null : tracks.length ? (
             <nav className="sh-tracks" role="tablist" aria-label="Modules">
               {tracks.map((tr) => (
                 <div className="sh-track" key={tr}>
@@ -147,9 +164,11 @@ export function Shell({ config }: { config: ShellConfig }) {
           return (
             <section key={t.id} className={`sh-panel m-${t.scope}`} hidden={t.id !== active} role="tabpanel" aria-label={t.label}>
               {t.story ? <div className="sh-wrap"><StoryCard story={t.story} /></div> : null}
-              <Suspense fallback={<div className="sh-wrap" style={{ padding: 40, color: '#6b6b68' }}>Loading…</div>}>
-                <C />
-              </Suspense>
+              <TabBoundary>
+                <Suspense fallback={<div className="sh-wrap" style={{ padding: 40, color: '#6b6b68' }}>Loading…</div>}>
+                  <C />
+                </Suspense>
+              </TabBoundary>
             </section>
           );
         })}

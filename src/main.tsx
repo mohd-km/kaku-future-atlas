@@ -6,10 +6,10 @@ import DefaultTab from './modules/kaku/Module';
 
 const config: ShellConfig = {
   pillar: 'worldview & physics',
-  title: 'Civilization & Futures Atlas',
+  title: "Exponential Futures Atlas",
   subtitle:
-    'Four interactive lessons on how much energy humanity uses, how fast computers grow, how 13.8 billion years of history fit on one screen, and what speed and gravity do to time.',
-  footer: 'Civilization & Futures Atlas · runs entirely in your browser · Mohammed KM',
+    "Two interactive lessons on where civilisation is heading: how much energy humanity uses and what more energy would unlock, and how fast computers grow towards the hard limit set by physics.",
+  footer: "Exponential Futures Atlas · runs entirely in your browser · Mohammed KM",
   tabs: [
     {
       id: 'kardashev', label: 'Energy scale', sub: 'how much power we use, and what it unlocks', scope: 'kaku',
@@ -57,48 +57,6 @@ const config: ShellConfig = {
         ],
       },
       load: () => import('./modules/singularity/Module'),
-    },
-    {
-      id: 'history', label: 'Big history', sub: 'Big Bang to today on one screen', scope: 'history',
-      provenance: [
-        { kind: 'real', label: 'published dates and historical energy-use estimates' },
-        { kind: 'model', label: 'resilience simulation' },
-      ],
-      story: {
-        problem:
-          'How do you show the Big Bang, the dinosaurs and the internet on one line when they are billions of years apart? On an ordinary timeline, all of recorded history would be thinner than a hair.',
-        how:
-          'The timeline uses a log scale: each step on the axis is 10 times further back in time, so billions of years and the last century fit on one screen. Below it, a simple model shows how energy per person, openness and shocks decide whether a society grows or collapses.',
-        tryThis:
-          'Press the "Industrial" button to zoom into the industrial era (1750 to 1950). On a straight timeline those 200 years would be 0.0000014% of the width; on this axis they already take up over 5% of the full view.',
-        terms: [
-          ['Gya / Mya / kya', 'billion / million / thousand years ago'],
-          ['10^6 y', 'a million years ago; each tick is 10 times further back than the one to its right'],
-          ['Energy capture', 'food plus fuel energy used per person per day, in kilocalories (kcal)'],
-          ['Resilience score', 'a 0 to 100 estimate from this model of how well a society absorbs shocks; higher is sturdier'],
-        ],
-      },
-      load: () => import('./modules/history/Module'),
-    },
-    {
-      id: 'cosmos', label: 'Speed, gravity & time', sub: 'relativity, black holes, the four forces', scope: 'cosmos',
-      provenance: [{ kind: 'model', label: 'standard physics equations and official constants (CODATA)' }],
-      story: {
-        problem:
-          'Why do astronauts age a little slower, and what happens to time near a black hole? And why do physicists think the forces of nature were once a single force?',
-        how:
-          'Moving very fast makes your clock run slower compared with people at rest (Lorentz time dilation), and strong gravity does the same. Every number here comes from the real equations. The second part shows how the strengths of three forces change with collision energy and nearly meet at one point.',
-        tryThis:
-          'Press the "0.866c (2x)" speed button: the time stretch factor (γ) becomes 2, so the traveller\'s clock ticks once for every two ticks back home.',
-        terms: [
-          ['c', 'the speed of light, 299,792 km per second; 0.5c means half of that'],
-          ['Light-year', 'the distance light travels in one year, about 9.46 trillion km; a distance, not a time'],
-          ['Redshift', 'light stretched to redder colours, by expanding space or by climbing out of strong gravity; the same slowing of time, seen as colour'],
-          ['Event horizon', 'the edge of a black hole; past it, not even light can escape'],
-          ['GeV', 'a unit of particle energy; 1 GeV is about the energy locked in one proton\'s mass'],
-        ],
-      },
-      load: () => import('./modules/cosmos/Module'),
     },
   ],
 };
