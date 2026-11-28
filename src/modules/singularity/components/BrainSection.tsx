@@ -295,7 +295,7 @@ export function BrainSection() {
         </div>
 
         <details className="drawer">
-          <summary>Read more: full biocomputation vs. electronic breakdown</summary>
+          <summary>Read more: brain vs chip, strengths and limits</summary>
           <div className="drawer-body">
             <div className="grid-2">
               <div>
@@ -305,8 +305,8 @@ export function BrainSection() {
               </div>
               <div>
                 <strong>Electronic Compute strengths &amp; limits:</strong> Exact lossless memory,
-                precise math, and continuous operation without fatigue. Currently draws much more
-                power per task, though efficiency improves rapidly with specialized chips.
+                precise maths and continuous operation without fatigue. Currently draws much more
+                power per task, though specialised chips are closing that gap quickly.
               </div>
             </div>
           </div>
@@ -370,11 +370,11 @@ export function BrainSection() {
         </div>
 
         <details className="drawer">
-          <summary>Read more: {currentLevel.name} — scope &amp; bottleneck</summary>
+          <summary>Read more: {currentLevel.name}: scope &amp; bottleneck</summary>
           <div className="drawer-body">
             <div className="detail-grid">
               <div className="detail-item">
-                <span className="detail-item-label">What is modeled</span>
+                <span className="detail-item-label">What is modelled</span>
                 <span>{currentLevel.focus}</span>
               </div>
               <div className="detail-item">

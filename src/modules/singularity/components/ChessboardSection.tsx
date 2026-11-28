@@ -6,13 +6,13 @@ function getGrainAnalogy(square: number): string {
   if (square <= 20) return 'Several kitchen sacks (~10 kg at square 20).';
   if (square <= 26) return 'A full shipping truck of grain.';
   if (square <= 32)
-    return 'Entire first half: ~4 billion grains (~100 metric tons)—large, yet still ordinary.';
+    return 'Entire first half: about 4 billion grains (about 100 tonnes). Large, but still ordinary.';
   if (square === 33)
     return 'Square 33 begins the second half: more than all 32 previous squares combined.';
-  if (square <= 40) return 'Millions of metric tons—matching a major country’s harvest.';
+  if (square <= 40) return 'Millions of tonnes, about a major country’s harvest.';
   if (square <= 48) return 'Exceeds annual global grain production many times over.';
   if (square <= 56) return 'A pile of grain larger than Mount Everest.';
-  return 'Roughly 9.2 quintillion grains on square 64 alone—thousands of years of global harvests.';
+  return 'Roughly 9.2 quintillion grains on square 64 alone, thousands of years of global harvests.';
 }
 
 function formatBigIntGrains(square: number): string {

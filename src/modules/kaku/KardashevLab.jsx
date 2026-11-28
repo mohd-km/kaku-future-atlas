@@ -130,7 +130,7 @@ export default function KardashevLab({ onKChange }) {
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>Exponential Futures Atlas — Energy Summary</title>
+<title>Exponential Futures Atlas: Energy Summary</title>
 <style>
   body { font-family: Georgia, serif; color: #111; background: #fff; max-width: 760px; margin: 36px auto; padding: 0 20px; line-height: 1.5; }
   h1 { font-size: 28px; margin: 0 0 6px; }
@@ -147,12 +147,12 @@ export default function KardashevLab({ onKChange }) {
 </style>
 </head>
 <body>
-  <h1>Exponential Futures Atlas — Energy Summary</h1>
+  <h1>Exponential Futures Atlas: Energy Summary</h1>
   <div class="meta">Generated at future.mohammed-km.in by Mohammed KM | Sagan-Kardashev formula: K = (log10(P) - 6) / 10</div>
   <div class="grid">
     <div class="box"><div class="lbl">Kardashev Index</div><div class="val">Type ${powerBreakdown.k.toFixed(2)}</div></div>
     <div class="box"><div class="lbl">Total Power Output</div><div class="val">${formatWatts(powerBreakdown.total)}</div></div>
-    <div class="box"><div class="lbl">Civilization Tier</div><div class="val">${tierInfo.tier}</div></div>
+    <div class="box"><div class="lbl">Civilisation Type</div><div class="val">${tierInfo.tier}</div></div>
   </div>
   <h2>Allocated Power Sources</h2>
   <table>
@@ -164,8 +164,8 @@ export default function KardashevLab({ onKChange }) {
     <tr><td>Nuclear Fusion Plants</td><td>${formatWatts(powerBreakdown.pFusion)}</td></tr>
     <tr><td>Orbital &amp; Stellar Arrays</td><td>${formatWatts(powerBreakdown.pOrbital)}</td></tr>
   </table>
-  <h2>Unlocked Technologies (${unlockedTechs.length} of ${KARDASHEV_UNLOCKS.length})</h2>
-  <ul>${unlockedList || '<li>Raise your energy budget above Type 0.78 to unlock post-fossil planetary technologies.</li>'}</ul>
+  <h2>Technologies Within Reach (${unlockedTechs.length} of ${KARDASHEV_UNLOCKS.length})</h2>
+  <ul>${unlockedList || '<li>Raise your energy budget above Type 0.78 to bring the first post-fossil technologies within reach.</li>'}</ul>
   <div class="foot">Baseline: world primary energy 2023 (~620 EJ/yr, Energy Institute Statistical Review 2024). Technology thresholds are illustrative, framed after Kardashev (1964) and Sagan (1973).</div>
 </body>
 </html>`;
@@ -397,7 +397,7 @@ export default function KardashevLab({ onKChange }) {
             <canvas
               ref={canvasRef}
               className="figure-canvas"
-              aria-label="Animated civilization energy scale visualization"
+              aria-label="Animated civilisation energy scale visualisation"
             />
           </div>
           <div className="figure-caption">
@@ -567,7 +567,7 @@ export default function KardashevLab({ onKChange }) {
 
         <div className="tech-detail-bar">
           <div>
-            <strong>{selectedTech.name}</strong> — {selectedTech.summary}
+            <strong>{selectedTech.name}</strong>: {selectedTech.summary}
           </div>
           <span className="mono-tag">
             {selectedTech.classTag} | Requires Type {selectedTech.minK.toFixed(2)} | {selectedTech.law}
@@ -582,7 +582,7 @@ export default function KardashevLab({ onKChange }) {
             Sagan's version of the Kardashev rating, which allows decimals: <code>K = (log10(P) - 6) / 10</code>, P in watts. Type I = 10^16 W (a planet), Type II = 10^26 W (a star), Type III = 10^36 W (a galaxy). Each whole step is 10 billion times more power.
           </p>
           <p>
-            Today's baseline: world primary energy 2023 ≈ 620 EJ/yr ≈ 19.6 TW (Energy Institute Statistical Review 2024), giving K ≈ 0.73. Technology unlock thresholds are illustrative.
+            Today's baseline: world primary energy 2023 ≈ 620 EJ/yr ≈ 19.6 TW (Energy Institute Statistical Review 2024), giving K ≈ 0.73. The energy level at which each technology appears is illustrative.
           </p>
         </div>
       </details>

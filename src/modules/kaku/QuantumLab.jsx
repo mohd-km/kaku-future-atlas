@@ -230,7 +230,7 @@ export default function QuantumLab() {
           <div className={`qubit-verdict ${fits ? 'ok' : 'no'}`}>
             {fits
               ? `${qubits} qubits fit: ${classicalRam} of ${machine.label.split('· ')[1]}.`
-              : `${qubits} qubits need ${classicalRam}; ${machine.label.split(' ·')[0]} tops out at ${maxQubits}.`}
+              : `${qubits} qubits need ${classicalRam}, but ${machine.label.split(' ·')[0]} tops out at ${maxQubits}.`}
           </div>
         </div>
       </div>

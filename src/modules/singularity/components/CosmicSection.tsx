@@ -332,7 +332,7 @@ export function CosmicSection() {
           />
         </div>
         <div className="figure-caption">
-          <span>FIG. 3 — MILKY WAY DISK (~100,000 LY · 20,000 HOPS AT 5 LY/HOP)</span>
+          <span>FIG. 3 · MILKY WAY DISK (~100,000 LY · 20,000 HOPS AT 5 LY/HOP)</span>
           <span>HARD LIMIT: LIGHT SPEED, SO 100,000 YRS AT LEAST</span>
         </div>
 

@@ -2,7 +2,7 @@
 
 Live: https://future.mohammed-km.in/
 
-Two interactive lessons on where civilisation is heading: how much energy humanity uses and what more energy would unlock, and how fast computers grow towards the hard limit set by physics.
+Two interactive lessons on where civilisation is heading. One measures how much energy humanity uses and what more energy would make possible. The other tracks how fast computers improve, and the hard limit physics puts on them.
 
 Tabs (deep-linkable): `#kardashev`, `#singularity`.
 

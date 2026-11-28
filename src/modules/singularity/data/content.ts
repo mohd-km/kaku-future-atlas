@@ -34,7 +34,7 @@ export const EPOCHS: EpochItem[] = [
     summary:
       'Life encodes successful molecular designs in DNA. Natural selection preserves working patterns and discards failures, building local order while exporting heat.',
     transition:
-      'Genetic evolution was still slow—it took generations to record a single adaptation. Nervous systems broke that bottleneck.',
+      'Genetic evolution was still slow. It took generations to record a single adaptation. Nervous systems broke that bottleneck.',
     orderIndex: 2,
   },
   {
@@ -58,7 +58,7 @@ export const EPOCHS: EpochItem[] = [
     medium: 'External tools, writing, and engineered hardware/software',
     pace: 'Decades, then years',
     summary:
-      'Human intelligence builds external substrates—printing, electronics, and digital computers—that remember accurately and compute millions of times faster than neurons.',
+      'Human intelligence builds external substrates (printing, electronics and digital computers) that remember accurately and compute millions of times faster than neurons.',
     transition:
       'Each generation of computers helps design the next, turning technological progress into a compounding feedback loop.',
     orderIndex: 4,
@@ -86,7 +86,7 @@ export const EPOCHS: EpochItem[] = [
     summary:
       'Kurzweil’s boldest hypothesis: intelligence eventually reorganizes ordinary matter into dense computational substrates, spreading outward as far as physics allows.',
     transition:
-      'Even here, progress is not magic—it remains strictly bounded by thermodynamics, quantum mechanics, and the speed of light.',
+      'Even here, progress is bounded by thermodynamics, quantum mechanics, and the speed of light.',
     orderIndex: 6,
   },
 ];
@@ -130,7 +130,7 @@ export const PARADIGMS: ParadigmItem[] = [
     example: 'Zuse Z3, Harvard Mark I',
     mechanism: 'Electromagnetic coils opening and closing tiny metal contacts.',
     wall: 'Moving metal contacts wore out and could not switch faster than milliseconds.',
-    successor: 'Vacuum tubes eliminated moving parts altogether.',
+    successor: 'Vacuum tubes removed moving parts completely.',
   },
   {
     id: 3,
@@ -142,7 +142,7 @@ export const PARADIGMS: ParadigmItem[] = [
     peakLogCpsPer1000: 1,
     example: 'ENIAC, UNIVAC I',
     mechanism: 'Electron flow controlled inside heated glass bulbs.',
-    wall: 'Tubes were bulky, power-hungry, hot, and burned out frequently.',
+    wall: 'Tubes were bulky, hot and power-hungry, and they burned out often.',
     successor: 'Solid-state transistors switched electrons inside tiny silicon crystals.',
   },
   {
@@ -168,8 +168,8 @@ export const PARADIGMS: ParadigmItem[] = [
     peakLogCpsPer1000: 13.5,
     example: 'Microprocessors, modern GPUs & AI accelerators',
     mechanism: 'Photolithography packing billions of nanoscale transistors on flat silicon.',
-    wall: '2D silicon features approach atomic scales where quantum tunneling and heat density bite.',
-    successor: '3D stacking, photonic interconnects, molecular logic, and specialized physics.',
+    wall: 'Flat silicon features are nearing the size of atoms, where electrons leak through barriers (quantum tunnelling) and heat builds up.',
+    successor: '3D stacking, light-based links between chips, molecular logic and specialised hardware.',
   },
   {
     id: 6,
@@ -182,7 +182,7 @@ export const PARADIGMS: ParadigmItem[] = [
     example: '3D chiplets, optical interconnects, reversible & quantum systems',
     mechanism: 'Computing in three dimensions using light, molecular switches, or reversible states to cut heat.',
     wall: 'Eventually bounded by thermodynamics (Landauer limit) and quantum energy limits.',
-    successor: 'Approaches the physical ceiling of matter as a computational substrate.',
+    successor: 'Gets close to the ceiling on how much computing matter can do.',
   },
 ];
 
@@ -211,14 +211,14 @@ export const COMPUTE_SCALES: ComputeScaleItem[] = [
   },
   {
     id: 'global-current',
-    label: 'Current global human + datacenter compute',
+    label: 'All human brains and data centres today',
     logMin: 22,
     logMax: 26,
     displayRange: '10^22 to 10^26 cps',
     category: 'current',
     categoryLabel: 'Present Earth',
     explanation:
-      'Combined across global AI datacenters (~10^22 to 10^23 ops/sec of active silicon) and ~8 billion human brains (~10^24 to 10^26 functional cps). Humanity still uses a vanishingly small fraction of Earth’s physical capacity.',
+      'AI data centres add up to about 10^22 to 10^23 operations a second of active silicon. About 8 billion human brains add roughly 10^24 to 10^26 cps. Together that is a tiny fraction of what Earth’s matter could compute.',
   },
   {
     id: 'ultimate-laptop',
@@ -229,7 +229,7 @@ export const COMPUTE_SCALES: ComputeScaleItem[] = [
     category: 'theoretical',
     categoryLabel: 'Theoretical physics upper bound',
     explanation:
-      'MIT physicist Seth Lloyd calculated the absolute quantum-mechanical ceiling for 1 kilogram of matter confined to 1 liter (E = mc^2 fed into a quantum speed limit on how fast any system can change state). Not an engineering blueprint—a hard upper bound from physics.',
+      'MIT physicist Seth Lloyd worked out the quantum ceiling for 1 kilogram of matter packed into 1 litre (E = mc^2 fed into a quantum speed limit on how fast any system can change state). It is a hard upper bound from physics, and nobody has a design that comes close.',
   },
   {
     id: 'earth-computronium',
@@ -240,7 +240,7 @@ export const COMPUTE_SCALES: ComputeScaleItem[] = [
     category: 'theoretical',
     categoryLabel: 'Theoretical physics upper bound',
     explanation:
-      'Scaling Lloyd’s bound to the mass of Earth (~6 x 10^24 kg) yields ~10^75 operations per second. Even practical, cooled molecular hardware far below this ceiling would exceed today’s civilization by tens of orders of magnitude.',
+      'Scaling Lloyd’s bound up to the mass of Earth (about 6 x 10^24 kg) gives about 10^75 operations per second. Even cooled molecular hardware far below this ceiling would beat today’s civilisation by tens of powers of ten.',
   },
 ];
 
@@ -260,10 +260,10 @@ export const EMULATION_LEVELS: EmulationLevel[] = [
     name: 'Functional Emulation',
     cps: '10^14 to 10^16 cps',
     memory: '~100 TB to 1 PB',
-    focus: 'Reproducing the input-output behavior of cortical columns and neural regions.',
-    bottleneck: 'Understanding the brain’s learning algorithms, not just raw transistor count.',
+    focus: 'Copying what cortical columns and brain regions do with their inputs and outputs.',
+    bottleneck: 'Working out the brain’s learning rules. Transistor count is the easier part.',
     summary:
-      'Just as airplanes fly without flapping feathers, functional emulation copies the information-processing principles of the neocortex rather than every biochemical detail.',
+      'Aeroplanes fly without flapping feathers. In the same way, a functional copy takes the neocortex’s information-processing rules and skips the biochemistry.',
   },
   {
     id: 'kurzweil',
@@ -280,10 +280,10 @@ export const EMULATION_LEVELS: EmulationLevel[] = [
     name: 'Detailed Molecular Simulation',
     cps: '10^19 to 10^22+ cps',
     memory: 'Exabytes+',
-    focus: 'Modeling individual ion channels, neurotransmitter diffusion, and intracellular chemistry.',
-    bottleneck: 'Enormous compute and energy overhead to simulate physics that may not alter cognition.',
+    focus: 'Modelling individual ion channels, neurotransmitter diffusion and the chemistry inside each cell.',
+    bottleneck: 'Huge compute and energy cost to simulate physics that may not change how the brain thinks.',
     summary:
-      'Simulating every synapse down to molecular dynamics demands thousands to millions of times more compute. Needed if low-level biochemistry turns out to carry essential computation.',
+      'Simulating every synapse down to its molecules takes thousands to millions of times more compute. It is only needed if that low-level chemistry turns out to do real computing.',
   },
 ];
 
@@ -299,19 +299,19 @@ export const FERMI_CARDS: FermiCard[] = [
     id: 'early',
     title: '1. We Are Early (or First)',
     headline: 'Someone has to be near the front of the curve.',
-    body: 'Complex multicellular life took over three billion years to appear on Earth. If the jump from chemistry to technological intelligence is even slightly rarer than we guess, we may simply be among the first civilizations in our galaxy.',
+    body: 'Complex multicellular life took over three billion years to appear on Earth. If the jump from chemistry to technological intelligence is even slightly rarer than we guess, we may be among the first civilisations in our galaxy.',
   },
   {
     id: 'quiet',
-    title: '2. Optimal Computation Looks Quiet',
+    title: '2. Efficient Computing Looks Quiet',
     headline: 'Wasted energy is a sign of primitive engineering.',
-    body: 'Early human transmitters leak radio waves in every direction. Highly optimized computation minimizes waste heat and stray radiation—meaning an advanced computational structure could appear thermodynamically dark and indistinguishable from cold matter.',
+    body: 'Our early transmitters leaked radio waves in every direction. A well-optimised computer wastes very little heat or stray radiation, so an advanced one could look as dark and cold as ordinary matter.',
   },
   {
     id: 'inward',
-    title: '3. Civilizations Go Inward',
+    title: '3. Civilisations Go Inward',
     headline: 'Dense micro-scale compute beats light-year delays.',
-    body: 'Light takes years to cross between stars, making galactic conversations painfully slow. Advanced intelligences may prefer ultra-dense, tiny substrates where signals travel in nanoseconds rather than expanding loudly across empty space.',
+    body: 'Light takes years to cross between stars, so a conversation across the galaxy is painfully slow. An advanced intelligence may prefer very dense, tiny hardware where signals travel in nanoseconds, and never spread loudly across empty space.',
   },
 ];
 
@@ -375,7 +375,7 @@ export const GNR_ITEMS: GnrItem[] = [
     title: 'Genetics (Biotechnology)',
     subtitle: 'Reprogramming biology as software',
     summary:
-      'Viewing DNA and RNA as editable information rather than fixed destiny—allowing medicine to target root mechanisms of disease and aging.',
+      'Viewing DNA and RNA as editable information rather than fixed destiny, so medicine can target root mechanisms of disease and aging.',
     today: 'CRISPR gene editing, mRNA therapeutics, and AI-predicted protein structures (AlphaFold).',
   },
   {

@@ -44,7 +44,7 @@ export default function ImpossibleAtlas({ k = 0.73 }) {
         <div>
           <h2 className="section-title">what could we build? (feasibility matrix)</h2>
           <p className="section-lead">
-            Twelve science-fiction technologies, sorted by how impossible they are (rows: Class I, II, III) and how much energy they need (columns). Shaded cells are within reach of your Type {k.toFixed(2)} budget above. Click any idea to see the physics behind it.
+            Michio Kaku sorts science-fiction ideas into three classes of impossibility. Here are twelve: rows are the class (I, II, III), columns are the energy each one needs. Shaded cells are within reach of your Type {k.toFixed(2)} budget above. Click any idea to see the physics behind it.
           </p>
         </div>
       </div>
@@ -184,9 +184,9 @@ export default function ImpossibleAtlas({ k = 0.73 }) {
         <summary>Class I, II, III definitions</summary>
         <div className="drawer-body">
           <ul>
-            <li><strong>Class I Impossibilities:</strong> Technologies impossible today that violate no known laws of physics; plausible within one or two centuries.</li>
-            <li><strong>Class II Impossibilities:</strong> Technologies sitting at the edge of our understanding of spacetime and quantum theory; may take millennia to millions of years.</li>
-            <li><strong>Class III Impossibilities:</strong> Technologies that violate established laws of physics (such as conservation of energy and entropy).</li>
+            <li><strong>Class I Impossibilities:</strong> impossible today, but they break no known law of physics. Could arrive within a century or two.</li>
+            <li><strong>Class II Impossibilities:</strong> at the edge of what we understand about spacetime and quantum theory. Could take thousands to millions of years.</li>
+            <li><strong>Class III Impossibilities:</strong> they break an established law of physics, such as conservation of energy or the rise of entropy.</li>
           </ul>
         </div>
       </details>

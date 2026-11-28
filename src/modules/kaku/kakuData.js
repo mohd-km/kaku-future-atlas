@@ -53,14 +53,14 @@ export function describeCivilizationTier(k) {
     return {
       tier: 'Type I (Planetary)',
       plain: 'Uses all the energy reaching its planet',
-      frontier: 'Class I unlocked'
+      frontier: 'Class I within reach'
     };
   }
   if (k < 2.95) {
     return {
       tier: 'Type II (Stellar)',
       plain: 'Uses its whole star, via a Dyson swarm',
-      frontier: 'Class II unlocked'
+      frontier: 'Class II within reach'
     };
   }
   return {
@@ -76,7 +76,7 @@ export const KARDASHEV_UNLOCKS = [
     name: 'Commercial Fusion Grid',
     minK: 0.78,
     classTag: 'Class I',
-    summary: 'Clean magnetic and laser fusion plants replace fossil baseload power.',
+    summary: 'Magnetic and laser fusion plants take over the steady baseload that fossil fuels supply today.',
     law: 'Nuclear binding energy (E = mc^2)'
   },
   {
@@ -84,7 +84,7 @@ export const KARDASHEV_UNLOCKS = [
     name: 'Planetary Weather Steering',
     minK: 0.95,
     classTag: 'Class I',
-    summary: 'Orbital mirrors and ocean thermal arrays calm hurricanes and droughts.',
+    summary: 'Mirrors in orbit and ocean heat arrays soften hurricanes and droughts.',
     law: 'Atmospheric thermodynamics'
   },
   {
@@ -92,7 +92,7 @@ export const KARDASHEV_UNLOCKS = [
     name: 'Carbon-Nanotube Space Elevator',
     minK: 1.0,
     classTag: 'Class I',
-    summary: 'A tethered ribbon lifts payloads into orbit at a fraction of rocket cost.',
+    summary: 'A ribbon tethered to the ground carries cargo up to orbit for a fraction of rocket cost.',
     law: 'Centrifugal & gravitational balance'
   },
   {
@@ -100,7 +100,7 @@ export const KARDASHEV_UNLOCKS = [
     name: 'Laser-Pushed Starships',
     minK: 1.15,
     classTag: 'Class I',
-    summary: 'Gigawatt planetary laser arrays accelerate gram-scale probes to 20% light speed.',
+    summary: 'Gigawatt laser arrays on the ground push gram-scale probes to 20% of light speed.',
     law: 'Radiation pressure (p = E/c)'
   },
   {
@@ -108,7 +108,7 @@ export const KARDASHEV_UNLOCKS = [
     name: 'Stellar Dyson Swarm',
     minK: 1.95,
     classTag: 'Class II',
-    summary: 'Millions of orbiting solar collectors capture the entire output of a host star.',
+    summary: 'Millions of solar collectors in orbit catch the full output of a star.',
     law: 'Stefan-Boltzmann radiation law'
   },
   {
@@ -116,7 +116,7 @@ export const KARDASHEV_UNLOCKS = [
     name: 'Spacetime Warp Bubble',
     minK: 2.35,
     classTag: 'Class II',
-    summary: 'Extreme negative energy compresses space ahead and expands it behind a craft.',
+    summary: 'Space is squeezed in front of a craft and stretched behind it, which needs huge amounts of negative energy.',
     law: 'Einstein field equations (Alcubierre metric)'
   },
   {
@@ -124,7 +124,7 @@ export const KARDASHEV_UNLOCKS = [
     name: 'Galactic Wormhole Transit',
     minK: 2.9,
     classTag: 'Class II',
-    summary: 'Planck-scale energy stabilizes shortcuts across spiral arms of a galaxy.',
+    summary: 'Energy at the Planck scale holds open shortcuts between the spiral arms of a galaxy.',
     law: 'General Relativity & quantum gravity'
   }
 ];
@@ -151,7 +151,7 @@ export const MIND_LEVELS = [
     decode: 42,
     waveFreq: 2.6,
     waveChaos: 0.18,
-    summary: 'Builds a live 3D map of position in space to hunt, flee, and navigate terrain.'
+    summary: 'Builds a live 3D map of position in space to hunt, flee and find its way across terrain.'
   },
   {
     id: 'l2',
@@ -283,7 +283,7 @@ export const QUANTUM_APPS = [
     id: 'drug',
     name: 'Drug & Protein Folding',
     plain: 'Simulating exact electron bonds',
-    summary: 'Classical computers approximate complex biomolecules; quantum processors model electron orbitals directly to screen new therapies.',
+    summary: 'Classical computers approximate complex biomolecules, while quantum processors model electron orbitals directly to screen new therapies.',
     targetMolecule: 'Complex enzyme active site',
     term: 'VQE',
     termPlain: 'Quantum molecular energy finder',
@@ -303,7 +303,7 @@ export const QUANTUM_APPS = [
     id: 'nitrogen',
     name: 'Green Nitrogen Fixation',
     plain: 'Copying bacteria fertilizer chemistry',
-    summary: 'Industrial fertilizer uses ~2% of global energy; decoding the FeMoco enzyme on a quantum chip unlocks room-temperature ammonia synthesis.',
+    summary: 'Industrial fertilizer uses about 2% of global energy, and decoding the FeMoco enzyme on a quantum chip could lead to room-temperature ammonia synthesis.',
     targetMolecule: 'Nitrogenase (FeMoco cluster)',
     term: 'Decoherence',
     termPlain: 'Noise breaking a quantum calculation',
@@ -320,10 +320,10 @@ export const IMPOSSIBLE_IDEAS = [
     clsCode: 'c1',
     barrier: 32,
     minK: 'Type I',
-    shortLine: 'Superheated plasma windows and magnetic cages can deflect particles and radiation.',
+    shortLine: 'Hot plasma windows and magnetic cages can push away particles and radiation.',
     lawFormula: 'F = q(E + v x B)',
-    lawPlain: 'Lorentz force — electric and magnetic fields steer charged particles',
-    mechanism: 'While Star Trek barriers cannot stop a laser beam outright, layered plasma windows sealed by strong magnetic fields plus carbon-nanotube armor can deflect debris and plasma.'
+    lawPlain: 'Lorentz force: electric and magnetic fields steer charged particles',
+    mechanism: 'A Star Trek shield that stops a laser beam is out of reach this way. Layered plasma windows held by strong magnetic fields, backed by carbon-nanotube armour, can still deflect debris and plasma.'
   },
   {
     id: 'invisibility',
@@ -332,10 +332,10 @@ export const IMPOSSIBLE_IDEAS = [
     clsCode: 'c1',
     barrier: 28,
     minK: 'Type I',
-    shortLine: 'Engineered metamaterials bend light smoothly around an object like water around a rock.',
+    shortLine: 'Metamaterials (structures smaller than a light wave) bend light around an object, like water around a rock.',
     lawFormula: 'n1 sin(theta1) = n2 sin(theta2)  (n < 0)',
-    lawPlain: 'Snell law with negative index — bends light backward around objects',
-    mechanism: 'Lab metamaterials already cloak small objects at microwave and infrared wavelengths; scaling sub-wavelength nanostructures to full visible light is an engineering challenge, not a physics violation.'
+    lawPlain: 'Snell\'s law with a negative index: light bends backwards around the object',
+    mechanism: 'Lab metamaterials already hide small objects at microwave and infrared wavelengths. Visible light needs nanostructures smaller than its wavelength. That is hard engineering, but it breaks no law of physics.'
   },
   {
     id: 'phasers',
@@ -344,10 +344,10 @@ export const IMPOSSIBLE_IDEAS = [
     clsCode: 'c1',
     barrier: 24,
     minK: 'Type I',
-    shortLine: 'High-energy lasers and focused particle beams concentrate coherent photons onto a target.',
+    shortLine: 'High-energy lasers and particle beams pour concentrated energy onto one spot.',
     lawFormula: 'E = h * nu',
-    lawPlain: 'Planck relation — photon energy scales directly with frequency',
-    mechanism: 'Industrial and defense megawatt lasers already exist. Handheld versions await compact, ultra-dense power packs rather than new physics.'
+    lawPlain: 'Planck relation: a photon\'s energy rises in step with its frequency',
+    mechanism: 'Megawatt lasers already exist in industry and defence. A handheld version needs a small, very dense power pack. The physics is already known.'
   },
   {
     id: 'teleportation',
@@ -356,10 +356,10 @@ export const IMPOSSIBLE_IDEAS = [
     clsCode: 'c1',
     barrier: 48,
     minK: 'Type I',
-    shortLine: 'Entangled particles transfer exact quantum states across distance without moving matter.',
+    shortLine: 'Entangled particles pass an exact quantum state across a distance without moving any matter.',
     lawFormula: '|Psi> = (|01> - |10>) / sqrt(2)',
-    lawPlain: 'Quantum entanglement — linked particles share state instantaneously',
-    mechanism: 'Photons and single atoms have already been teleported over kilometers. Teleporting living cells requires tracking ~10^28 atoms while respecting the no-cloning theorem (the original state is destroyed).'
+    lawPlain: 'Quantum entanglement: two linked particles share one state, however far apart',
+    mechanism: 'Photons and single atoms have already been teleported over kilometres. A person would mean tracking about 10^28 atoms, and the no-cloning theorem says the original state is destroyed on the way.'
   },
   {
     id: 'telepathy',
@@ -368,10 +368,10 @@ export const IMPOSSIBLE_IDEAS = [
     clsCode: 'c1',
     barrier: 36,
     minK: 'Type I',
-    shortLine: 'Brain scans and neural implants can decode intended words and transmit them digitally.',
+    shortLine: 'Brain scans and implants can decode the words you intend and send them digitally.',
     lawFormula: 'nabla x B = mu0 * J',
-    lawPlain: 'Ampere law — neural electric currents generate measurable magnetic fields',
-    mechanism: 'Because brain signals weaken rapidly over millimeters, biological telepathy fails, but BCI sensors paired with wireless links enable technology-mediated mind-to-mind messaging.'
+    lawPlain: 'Ampère\'s law: electric currents in neurons create magnetic fields you can measure',
+    mechanism: 'Brain signals fade within millimetres, so natural telepathy does not work. Brain-computer interface (BCI) sensors joined by a wireless link can still carry a message from one mind to another.'
   },
   {
     id: 'psychokinesis',
@@ -380,10 +380,10 @@ export const IMPOSSIBLE_IDEAS = [
     clsCode: 'c1',
     barrier: 34,
     minK: 'Type I',
-    shortLine: 'Thought-controlled room-temperature superconductors and micro-drones move objects on mental command.',
+    shortLine: 'Room-temperature superconductors and micro-drones, steered by thought, move objects on command.',
     lawFormula: 'F = nabla(m . B)',
-    lawPlain: 'Magnetic dipole force — magnetic gradients lift and steer objects',
-    mechanism: 'Direct brain-to-actuator links already let paralyzed patients move robotic arms. Pairing BCIs with magnetic levitation or swarms produces practical psychokinesis.'
+    lawPlain: 'Magnetic dipole force: an uneven magnetic field can lift and steer objects',
+    mechanism: 'Paralysed patients already move robotic arms through direct brain links. Pair a BCI with magnetic levitation or a drone swarm and you get a working version of psychokinesis.'
   },
   {
     id: 'starships',
@@ -392,10 +392,10 @@ export const IMPOSSIBLE_IDEAS = [
     clsCode: 'c1',
     barrier: 58,
     minK: 'Type I+',
-    shortLine: 'Laser-pushed light sails and fusion rockets can cross light-years within a human lifetime.',
+    shortLine: 'Light sails pushed by lasers, or fusion rockets, could cross light-years within a human lifetime.',
     lawFormula: 'delta_v = ve * ln(m0 / mf)',
-    lawPlain: 'Rocket equation — top speed depends on exhaust speed and fuel ratio',
-    mechanism: 'Chemical rockets are far too slow for nearby stars. High-exhaust fusion ramjets or gram-scale laser sails pushed by gigawatt orbital arrays reach 10-20% of light speed.'
+    lawPlain: 'Rocket equation: top speed depends on exhaust speed and fuel ratio',
+    mechanism: 'Chemical rockets are far too slow for the nearest stars. Fusion ramjets with fast exhaust, or gram-scale sails pushed by gigawatt lasers in orbit, could reach 10 to 20% of light speed.'
   },
   {
     id: 'antimatter',
@@ -404,10 +404,10 @@ export const IMPOSSIBLE_IDEAS = [
     clsCode: 'c1',
     barrier: 52,
     minK: 'Type I+',
-    shortLine: 'Matter-antimatter annihilation converts 100% of rest mass into pure propulsion energy.',
+    shortLine: 'When matter meets antimatter, 100% of the rest mass turns into energy for thrust.',
     lawFormula: 'E = m * c^2',
-    lawPlain: 'Mass-energy equivalence — tiny mass unlocks enormous energy',
-    mechanism: 'Antiprotons are produced today at CERN in nanogram fractions. Scaling magnetic Penning traps and production efficiency is purely an engineering and energy-budget hurdle.'
+    lawPlain: 'Mass-energy equivalence: a tiny mass holds an enormous amount of energy',
+    mechanism: 'CERN makes antiprotons today, in fractions of a nanogram. Scaling up magnetic Penning traps and production is an engineering and energy-budget problem.'
   },
   {
     id: 'ftl',
@@ -416,10 +416,10 @@ export const IMPOSSIBLE_IDEAS = [
     clsCode: 'c2',
     barrier: 84,
     minK: 'Type II-III',
-    shortLine: 'Space itself may expand faster than light inside a warped metric bubble without breaking local relativity.',
+    shortLine: 'Space itself may stretch faster than light inside a warp bubble, without breaking relativity locally.',
     lawFormula: 'G_mu_nu = (8*pi*G / c^4) * T_mu_nu',
-    lawPlain: 'Einstein field equations — mass and energy curve spacetime',
-    mechanism: 'The Alcubierre warp metric and traversable wormholes are mathematically valid solutions of General Relativity, but they demand exotic negative energy at stellar scales.'
+    lawPlain: 'Einstein field equations: mass and energy curve spacetime',
+    mechanism: 'The Alcubierre warp bubble and traversable wormholes are valid solutions of general relativity. Both need exotic negative energy on the scale of a star.'
   },
   {
     id: 'time-travel',
@@ -428,10 +428,10 @@ export const IMPOSSIBLE_IDEAS = [
     clsCode: 'c2',
     barrier: 88,
     minK: 'Type III',
-    shortLine: 'Forward time travel happens daily via relativity; backward loops require extreme spacetime curvature.',
+    shortLine: 'Forward time travel happens every day through relativity. Going backwards needs extreme curvature of spacetime.',
     lawFormula: 'dt_proper = dt * sqrt(1 - v^2/c^2)',
-    lawPlain: 'Time dilation — moving clocks tick slower than stationary ones',
-    mechanism: 'Closed timelike curves appear in rotating black hole and wormhole solutions, yet quantum radiation feedback may destabilize any time machine the moment it turns on.'
+    lawPlain: 'Time dilation: a moving clock ticks slower than one at rest',
+    mechanism: 'Closed timelike curves (paths that loop back to their own start in time) show up in solutions for spinning black holes and wormholes. Quantum radiation feedback may destroy any time machine the moment it switches on.'
   },
   {
     id: 'parallel-universes',
@@ -440,10 +440,10 @@ export const IMPOSSIBLE_IDEAS = [
     clsCode: 'c2',
     barrier: 90,
     minK: 'Type III',
-    shortLine: 'Quantum branching and eternal cosmic inflation both predict domains beyond our observable horizon.',
+    shortLine: 'Quantum branching and eternal cosmic inflation both predict regions beyond the part of the universe we can see.',
     lawFormula: 'i*hbar * dPsi/dt = H * Psi',
-    lawPlain: 'Schrodinger equation — quantum waves evolve as superposed realities',
-    mechanism: 'Entering another bubble universe or quantum branch is beyond any foreseeable energy budget, though gravitational-wave echoes could one day test cosmological multiverse models.'
+    lawPlain: 'Schrodinger equation: a quantum wave evolves as a mix of possible states',
+    mechanism: 'Reaching another bubble universe or quantum branch is far beyond any energy budget we can foresee. Gravitational-wave echoes could one day test some multiverse models.'
   },
   {
     id: 'perpetual-motion',
@@ -452,9 +452,9 @@ export const IMPOSSIBLE_IDEAS = [
     clsCode: 'c3',
     barrier: 100,
     minK: 'Impossible',
-    shortLine: 'No machine can create free energy or run forever without losing usable heat to entropy.',
+    shortLine: 'No machine can make free energy or run forever, because some usable energy is always lost as heat.',
     lawFormula: 'dU = Q - W   and   dS >= 0',
-    lawPlain: 'First & Second Laws of Thermodynamics — energy is conserved, disorder rises',
-    mechanism: 'Unlike Class I and II technologies, perpetual motion directly contradicts the conservation of energy and the arrow of entropy. If ever built, modern physics would need to be rewritten.'
+    lawPlain: 'First and second laws of thermodynamics: energy is conserved, and disorder (entropy) rises',
+    mechanism: 'Class I and II ideas need better engineering or more energy. Perpetual motion breaks conservation of energy and the arrow of entropy, so building one would mean rewriting physics.'
   }
 ];
