@@ -24,12 +24,11 @@ const config: ShellConfig = {
         how:
           "Humanity used about 19.6 TW in 2023 (TW: a trillion watts, steady power), which works out to Type 0.73. Each whole step up is 10 billion times more power, so Type I needs roughly 500 times what we use today. Mix the energy sources below and the rating updates live.",
         tryThis:
-          'Drag "Fossil fuels" to 0%: the rating falls from 0.73 to about 0.66, because most of today\'s power is still fossil. Then press "Type I (1.00)": the planet grows rings of orbiting solar collectors and 3 of the 7 future technologies switch on.',
+          'Drag "Fossil fuels" to 0%: the rating falls from 0.73 to about 0.66, because most of today\'s power is still fossil. Then press "Type I (1.00)": the planet grows rings of orbiting solar collectors and the fusion grid, the first of 3 energy-gated technologies, switches on.',
         terms: [
           ['Type 0.73', 'our current rating; the decimal says how far we are between Type 0 and Type I'],
           ['Log-scale slider', 'each notch multiplies the power instead of adding to it, so watts to galaxies fit on one slider'],
           ['Dyson swarm', 'a cloud of solar collectors orbiting a star to catch its light'],
-          ['Class I, II, III', 'how impossible an idea is: I breaks no law of physics, II is at the edge of known physics, III breaks a law'],
         ],
       },
       component: DefaultTab,

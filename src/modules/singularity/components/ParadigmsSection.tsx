@@ -509,8 +509,9 @@ export function ParadigmsSection() {
           <div className="drawer-body">
             <p>{scale.explanation}</p>
             <p className="footnote">
-              Formula note: Seth Lloyd (Nature, 2000) applies the Margolus–Levitin theorem (ops/sec
-              ≤ 2E / πℏ) with E = mc² for 1 kg of matter in 1 liter, yielding ~5.4 × 10^50 ops/sec.
+              Formula note: Seth Lloyd (Nature, 2000) used a quantum speed limit (a system with energy E
+              can do at most 2E / πℏ operations a second, ℏ being Planck's constant) with E = mc² for 1 kg
+              of matter in 1 liter, giving ~5.4 × 10^50 ops/sec.
             </p>
           </div>
         </details>

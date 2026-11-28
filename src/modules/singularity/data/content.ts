@@ -229,7 +229,7 @@ export const COMPUTE_SCALES: ComputeScaleItem[] = [
     category: 'theoretical',
     categoryLabel: 'Theoretical physics upper bound',
     explanation:
-      'MIT physicist Seth Lloyd calculated the absolute quantum-mechanical ceiling for 1 kilogram of matter confined to 1 liter (E = mc^2 applied to the Margolus-Levitin theorem). Not an engineering blueprint—a hard upper bound from physics.',
+      'MIT physicist Seth Lloyd calculated the absolute quantum-mechanical ceiling for 1 kilogram of matter confined to 1 liter (E = mc^2 fed into a quantum speed limit on how fast any system can change state). Not an engineering blueprint—a hard upper bound from physics.',
   },
   {
     id: 'earth-computronium',

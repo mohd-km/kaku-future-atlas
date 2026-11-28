@@ -23,7 +23,7 @@ const RENEW_2023_EXP = Math.log10(ejToWatts(50.6));
 const NUCLEAR_2023_EXP = Math.log10(ejToWatts(24.8));
 const roundExp = (x) => Math.round(x * 100) / 100;
 
-export default function KardashevLab({ onKChange }) {
+export default function KardashevLab({ onKChange = undefined }) {
   // Logarithmic exponents (0 means off/negligible)
   const [fossilPct, setFossilPct] = useState(100); // % of 2023 fossil use
   const [solarExp, setSolarExp] = useState(roundExp(RENEW_2023_EXP)); // ~1.6 TW
@@ -120,9 +120,9 @@ export default function KardashevLab({ onKChange }) {
     const unlockedList = unlockedTechs
       .map(
         (t) =>
-          `<li><strong>${t.name}</strong> (${t.classTag}, K >= ${t.minK.toFixed(
+          `<li><strong>${t.name}</strong> (K >= ${t.minK.toFixed(
             2
-          )}): ${t.summary} <em>[${t.law}]</em></li>`
+          )}): ${t.summary} [${t.law}]</li>`
       )
       .join('');
 
@@ -130,7 +130,7 @@ export default function KardashevLab({ onKChange }) {
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>Civilization &amp; Futures Atlas — Energy Summary</title>
+<title>Exponential Futures Atlas — Energy Summary</title>
 <style>
   body { font-family: Georgia, serif; color: #111; background: #fff; max-width: 760px; margin: 36px auto; padding: 0 20px; line-height: 1.5; }
   h1 { font-size: 28px; margin: 0 0 6px; }
@@ -147,7 +147,7 @@ export default function KardashevLab({ onKChange }) {
 </style>
 </head>
 <body>
-  <h1>Civilization &amp; Futures Atlas — Energy Summary</h1>
+  <h1>Exponential Futures Atlas — Energy Summary</h1>
   <div class="meta">Generated at future.mohammed-km.in by Mohammed KM | Sagan-Kardashev formula: K = (log10(P) - 6) / 10</div>
   <div class="grid">
     <div class="box"><div class="lbl">Kardashev Index</div><div class="val">Type ${powerBreakdown.k.toFixed(2)}</div></div>
@@ -570,7 +570,7 @@ export default function KardashevLab({ onKChange }) {
             <strong>{selectedTech.name}</strong> — {selectedTech.summary}
           </div>
           <span className="mono-tag">
-            {selectedTech.classTag} | Requires Type {selectedTech.minK.toFixed(2)} | {selectedTech.law}
+            Requires Type {selectedTech.minK.toFixed(2)} | {selectedTech.law}
           </span>
         </div>
       </div>
