@@ -23,7 +23,7 @@ const RENEW_2023_EXP = Math.log10(ejToWatts(50.6));
 const NUCLEAR_2023_EXP = Math.log10(ejToWatts(24.8));
 const roundExp = (x) => Math.round(x * 100) / 100;
 
-export default function KardashevLab({ onKChange = undefined }) {
+export default function KardashevLab({ onKChange }) {
   // Logarithmic exponents (0 means off/negligible)
   const [fossilPct, setFossilPct] = useState(100); // % of 2023 fossil use
   const [solarExp, setSolarExp] = useState(roundExp(RENEW_2023_EXP)); // ~1.6 TW
@@ -120,7 +120,7 @@ export default function KardashevLab({ onKChange = undefined }) {
     const unlockedList = unlockedTechs
       .map(
         (t) =>
-          `<li><strong>${t.name}</strong> (K >= ${t.minK.toFixed(
+          `<li><strong>${t.name}</strong> (${t.classTag}, K >= ${t.minK.toFixed(
             2
           )}): ${t.summary} [${t.law}]</li>`
       )
@@ -570,7 +570,7 @@ export default function KardashevLab({ onKChange = undefined }) {
             <strong>{selectedTech.name}</strong> — {selectedTech.summary}
           </div>
           <span className="mono-tag">
-            Requires Type {selectedTech.minK.toFixed(2)} | {selectedTech.law}
+            {selectedTech.classTag} | Requires Type {selectedTech.minK.toFixed(2)} | {selectedTech.law}
           </span>
         </div>
       </div>
